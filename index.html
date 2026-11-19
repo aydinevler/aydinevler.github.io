@@ -1,0 +1,639 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aydınevler Önalım Davaları</title><style>:root{color-scheme:light only}html,body{background:#fff;color:#222}input,select,textarea,button{color:#222;-webkit-text-fill-color:currentColor;color-scheme:light}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.45}
+td.n,th.n,.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+input[type=search]{width:100%;font-size:17px}
+body{background:#fff;color:#222;font-size:16px}
+nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #e5e5e5;display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:7px 6px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+nav button{--c:#1e5b4f;border:1.5px solid var(--c);background:color-mix(in srgb,var(--c) 9%,#fff);color:var(--c);border-radius:10px;padding:7px 2px;font-size:13.5px;font-weight:700;line-height:1.2;cursor:pointer;min-height:36px}
+nav button.on{background:var(--c);color:#fff;box-shadow:0 2px 6px color-mix(in srgb,var(--c) 40%,transparent)}
+section{display:none}section.on{display:block}
+.w{max-width:560px;margin:0 auto;padding:24px 18px 40px}
+h1{font-size:22px;margin:0 0 4px}.sub{color:#777;font-size:14px;margin-bottom:22px}
+input[type=search]{padding:16px;border:2px solid #1e5b4f;border-radius:14px;outline:none}
+.hint{color:#888;font-size:14px;margin:8px 4px 26px}
+.pick{display:block;width:100%;text-align:left;padding:14px;margin:6px 0;border:1px solid #ddd;border-radius:12px;background:#fafafa;font-size:16px}
+.big{background:#1e5b4f;color:#fff;border-radius:16px;padding:20px;margin:18px 0 12px}
+.big small{opacity:.8;font-size:13px}.big b{display:block;font-size:30px;margin-top:4px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:12px 2px;border-bottom:1px solid #eee;font-size:15px}
+.row span:first-child{color:#444}
+h2{font-size:15px;color:#1e5b4f;margin:26px 0 6px;text-transform:uppercase;letter-spacing:.04em}
+.dv{display:flex;justify-content:space-between;padding:10px 2px;border-bottom:1px solid #eee}
+.dv b{font-size:15px}.dv div div{color:#888;font-size:13px}
+.st{font-size:12px;padding:3px 10px;border-radius:20px;height:fit-content;white-space:nowrap;background:#fdf1e1;color:#94570f}
+.st.k{background:#e5f1ec;color:#1e5b4f}
+.info{background:#f6f8f7;border-radius:14px;padding:16px;margin-bottom:6px}
+.info p{margin:8px 0 0;font-size:15px;color:#333}
+.du{border-left:3px solid #1e5b4f;padding:4px 0 4px 14px;margin:0 0 22px}
+.dt{display:flex;align-items:center;gap:10px;margin-bottom:6px}.dd{color:#fff;font-weight:700;font-size:15px;padding:4px 12px;border-radius:8px;white-space:nowrap}
+.du small{color:#888;font-size:13px}.du b{display:block;margin:2px 0 4px}.du p{white-space:pre-line;margin:0;color:#333;font-size:15px}
+details{border:1px solid #e5e5e5;border-radius:12px;margin-bottom:8px}
+details>summary{padding:14px;cursor:pointer;display:flex;justify-content:space-between;gap:10px;list-style:none}
+details>summary::-webkit-details-marker{display:none}
+details>summary:after{content:"›";color:#aaa;transform:rotate(90deg);transition:.2s}
+details[open]>summary:after{transform:rotate(270deg)}
+details>summary .n{margin-left:auto}
+details .in{padding:0 12px 8px}
+details details{border:0;border-top:1px solid #eee;border-radius:0;margin:0}
+details details>summary{padding:12px 2px;font-size:15px}
+details details .in{padding:0 0 8px 10px;background:#fafafa;border-radius:8px}
+details details .row{font-size:14px;padding:9px 6px}
+.tg{display:flex;gap:6px;margin:4px 0 10px}.tg button{flex:1;padding:10px;border:1px solid #cfd8d5;background:#fff;border-radius:10px;font-size:14px;color:#555}
+.tg button.on{background:#1e5b4f;color:#fff;border-color:#1e5b4f}
+.xl{overflow:auto;max-height:calc(100vh - 70px);border:1px solid #cfd4d2;border-radius:10px;-webkit-overflow-scrolling:touch}
+.xl table{border-collapse:separate;border-spacing:0;font-size:12.5px;white-space:nowrap}
+.xl th,.xl td{padding:6px 7px;border-right:1px solid #e3e6e5;border-bottom:1px solid #e3e6e5;background:#fff}
+.xl thead th{position:sticky;top:0;z-index:2;background:#eef2f1;font-size:12px;color:#444;text-align:center;white-space:nowrap;min-width:64px;vertical-align:bottom;line-height:1.25}
+.xl thead small{font-weight:400;color:#777;font-size:11px}
+.xl th.c1,.xl td.c1{position:sticky;left:0;z-index:1;min-width:112px;max-width:112px;font-size:12px;white-space:normal;text-align:left;box-shadow:2px 0 3px rgba(0,0,0,.06)}
+.xl thead th.c1{z-index:3}
+.xl tr.gr td{font-weight:700}
+.xl tr.tp td{font-weight:700;background:#e5f1ec}
+.xl td{text-align:right;font-variant-numeric:tabular-nums}
+.fsb{border:1px solid #1e5b4f;background:#fff;color:#1e5b4f;border-radius:8px;padding:7px 12px;font-size:14px;font-weight:600}
+.xl.fs{position:fixed;top:44px;left:0;right:0;bottom:0;z-index:50;max-height:none;border:0;border-radius:0;background:#fff}
+.fsx{display:none;position:fixed;top:0;left:0;right:0;z-index:51;height:44px;background:#1e5b4f;color:#fff;align-items:center;justify-content:space-between;padding:0 12px;font-size:14px}
+.fsx button{white-space:nowrap;background:#fff;color:#1e5b4f;border:0;border-radius:8px;padding:6px 12px;font-weight:700;font-size:14px}
+body.fsm .fsx{display:flex}body.fsm{overflow:hidden}
+.xl.fs thead th{top:0}
+.kay{font-size:13px;color:#888;text-align:center;margin:0 0 6px}
+.stp{display:flex;gap:6px;margin:12px 0 4px}.stp div{flex:1;background:#fff;border-radius:10px;padding:8px;text-align:center}
+.stp b{display:block;font-size:13px;color:#1e5b4f}.stp span{font-size:12px;color:#666}
+.kb{border:1px solid #d6e6df;border-radius:16px;overflow:hidden}
+.kbt{display:flex;justify-content:space-between;align-items:center;background:#2e8b57;color:#fff;padding:16px}
+.kbt small{display:block;font-size:12px;opacity:.85}.kbt b{font-size:28px}.kbm{text-align:right}.kbm b{font-size:20px;display:block}
+.kbg{padding:4px 14px 8px}.kbg+.kbg{border-top:6px solid #f3f7f5}
+.kbh{display:flex;justify-content:space-between;font-weight:700;color:#2e8b57;padding:10px 2px 4px;font-size:15px}
+.kbg .row{font-size:14px;padding:8px 2px}.kbg .row:last-child{border:0}
+.nm{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.nm div{background:#f6f8f7;border-radius:8px;padding:8px 10px;font-size:13px;line-height:1.3}
+.nm div span{color:#2e8b57;font-weight:700;margin-right:4px}
+.bg2{display:flex;gap:10px;margin-top:10px}.bg2 div{flex:1}.bg2 span{display:block;font-size:12px;opacity:.85}.bg2 b{font-size:22px!important;margin:2px 0 0!important}
+.oc{border:1px solid #e3e6e5;border-radius:14px;padding:14px;margin:12px 0;background:#fff}
+.oct{font-weight:700;font-size:16px}.ocs{color:#888;font-size:13px;margin-top:2px}
+.ocg{display:grid;grid-template-columns:.8fr 1.1fr 1.1fr;gap:8px;margin-top:12px}
+.ocg div{background:#f6f8f7;border-radius:10px;padding:10px 8px}
+.ocg small{display:block;color:#777;font-size:12px}.ocg b{display:block;font-size:16px;margin-top:2px;font-variant-numeric:tabular-nums}
+.ocg em{display:block;font-style:normal;font-size:11px;color:#888;margin-top:3px;line-height:1.3}
+.ocd{border:0!important;margin:10px 0 0!important}.ocd>summary{padding:10px 2px!important;color:#1e5b4f;font-weight:600;font-size:14px;border-top:1px solid #eee}
+.ocd .row{font-size:14px;padding:9px 2px}
+.cs{background:#f6f8f7;border-radius:14px;padding:12px 14px;margin-bottom:8px}
+.csh{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.csh b{font-size:15px;display:block}.csh small{color:#888;font-size:12.5px}
+.csn{font-size:14px;color:#333;margin-top:6px}
+.csd{border:0!important;margin:4px 0 0!important;border-radius:0!important}.csd>summary{padding:6px 0!important;color:#1f6fb2;font-weight:600;font-size:13.5px}
+.ctl div{display:flex;gap:10px;padding:6px 0;border-top:1px solid #e6e9e8;font-size:13.5px}
+.ctl b{min-width:78px;color:#1f6fb2;font-size:13px}.ctl span{flex:1}.ctl em{font-style:normal;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums;color:#222}
+.g3 .csd>summary,.g3 .ctl b{color:#2e8b57}
+.ak{display:grid;grid-template-columns:1fr 1fr;gap:8px}.ak div{background:#f6f8f7;border-radius:12px;padding:10px 12px}
+.ak small{display:block;color:#777;font-size:12px}.ak b{font-size:17px;font-variant-numeric:tabular-nums}
+.af{display:grid;gap:10px}.af label{display:block;font-size:13px;color:#555;font-weight:600}
+.af input,.af select{display:block;width:100%;margin-top:4px;padding:12px;font-size:16px;border:1.5px solid #cfd8d5;border-radius:10px;background:#fff}
+.ab{display:flex;gap:8px;margin:14px 0 8px}.ab button{flex:1;padding:12px;border-radius:10px;border:0;background:#22314d;color:#fff;font-size:15px;font-weight:700}
+.ab button.o{background:#fff;color:#22314d;border:1.5px solid #22314d}
+.er{background:#f6f8f7;border-radius:12px;padding:10px;margin-bottom:8px}
+.er .r1{display:flex;gap:6px;align-items:center}.er .no{font-weight:700;color:#22314d;min-width:22px}
+.er input{padding:9px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:8px;background:#fff;min-width:0}
+.er .ea{flex:1}.er .et{width:92px}.er .ev{flex:1;text-align:right;font-weight:700}
+.er .r2{display:flex;gap:6px;margin-top:6px;align-items:center}.er .r2 small{flex:1;color:#666;font-size:12.5px}
+.er button{border:1px solid #cfd8d5;background:#fff;border-radius:8px;padding:6px 9px;font-size:12.5px}
+.er.yeni{background:#fff7e6;border:1px dashed #e0a43a}
+.ey{width:100%;padding:11px;border:1.5px dashed #22314d;background:#fff;color:#22314d;border-radius:10px;font-weight:700;font-size:14px}
+.ayr{background:#fff3cd;color:#6b4d00;font-size:13px;padding:8px 12px;text-align:center}
+.gc{background:#eef4fb;border:1px solid #cfe0f3;border-radius:14px;padding:12px}
+.gc select{width:100%;padding:12px;font-size:16px;border:1.5px solid #9dbfe3;border-radius:10px;background:#fff}
+.gc .ab button{background:#1f6fb2}.gc .ab button.o{background:#fff;color:#1f6fb2;border-color:#1f6fb2}
+.ist{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff4e0;border:1.5px solid #f0b45a;border-radius:14px;padding:14px;margin:0 0 12px;color:#7a3d00}
+.ist b{font-size:16px}.ist span{display:block;font-size:12.5px;margin-top:2px}.ist>b{font-size:20px;white-space:nowrap}
+.g3c{background:#edf7f1;border-color:#cfe7da}.g3c .ab button{background:#2e8b57}.g3c .ab button.o{background:#fff;color:#2e8b57;border-color:#2e8b57}
+.gc .ab{flex-wrap:wrap}.gc .ab button{min-width:30%;padding:12px 6px;font-size:14px}
+.xl thead th.pt{background:#e8890c!important;color:#fff}.pth{line-height:1.25}.pth span{display:block;margin:3px auto;background:#fff;color:#c2410c;font-weight:800;font-size:12px;border-radius:6px;padding:2px 6px;width:fit-content;letter-spacing:.04em}.pth small{color:#fff!important;opacity:.95}
+.mc{border:1px solid #e3e6e5;border-left:5px solid var(--c);border-radius:12px;padding:12px;margin-bottom:8px;background:#fff}
+.mch{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.mch b{font-size:15px}.mch .n{font-weight:800;font-size:16px}
+.mcs{font-size:12.5px;color:#777;margin-top:2px}.mcs span{color:var(--c);font-weight:700}
+.mci{display:flex;gap:6px;margin-top:8px;overflow-x:auto}.mci img{height:84px;border:1px solid #ddd;border-radius:6px}
+.mcy{font-size:12px;color:#aaa;margin-top:6px}
+.mgt{display:flex;justify-content:space-between;align-items:center;background:#2f3b45;color:#fff;border-radius:12px;padding:14px;margin-top:4px}.mgt b{font-size:16px}.mgt small{display:block;font-size:12px;opacity:.8}.mgt>b{font-size:20px}
+.tl{padding:9px 2px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;gap:10px;font-size:14px}
+.tl span:first-child small{display:block;color:#1e5b4f;font-size:13px;font-weight:700}
+</style><style>
+.gw{max-width:420px;margin:0 auto;padding:60px 22px}.gl{font-size:42px}.gw h1{font-size:22px;margin:10px 0 4px}
+.gw label{display:block;font-size:13px;color:#555;font-weight:600;margin-top:18px}
+.gw input{display:block;width:100%;margin-top:6px;padding:15px;font-size:19px;border:2px solid #1e5b4f;border-radius:12px;letter-spacing:.04em}
+.gb{width:100%;margin-top:14px;padding:15px;border:0;border-radius:12px;background:#1e5b4f;color:#fff!important;font-size:17px;font-weight:700}
+.gb:disabled{opacity:.6}.gl2{width:100%;margin-top:8px;padding:10px;border:0;background:none;color:#1e5b4f!important;text-decoration:underline}
+.ust{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 14px;background:#f3f6f5;font-size:13px;color:#444}
+.ust button{border:1px solid #cfd8d5;background:#fff;border-radius:8px;padding:5px 12px;font-size:13px}
+</style></head><body>
+<div id="giris" style="display:none"><div class="gw">
+<div class="gl">⚖️</div><h1>Aydınevler Önalım Davaları</h1><div class="sub">Bu sayfa yalnızca dava katılımcılarına açıktır.</div>
+<div id="g1"><label>Cep telefonu numaranız<input id="gT" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xx xx"></label><button id="gB" class="gb">SMS kodu gönder</button></div>
+<div id="g2" style="display:none"><label>SMS kodu<input id="gK" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="6 haneli kod"></label><button id="gO" class="gb">Giriş yap</button><button id="gG" class="gl2">Numarayı değiştir</button></div>
+<div id="gM" class="hint" style="margin-top:10px"></div></div></div>
+<div id="yuk" style="display:none"><div class="w"><p class="hint">Yükleniyor…</p></div></div>
+<div id="app" style="display:none">
+<nav id="nav">
+<button data-t="du" style="--c:#7b4fb0">Duyurular</button><button data-t="od" class="on" style="--c:#22314d">Ödemem</button><button data-t="s12" style="--c:#1f6fb2">1. ve 2. Şufa</button><button data-t="s3" style="--c:#2e8b57">3. Şufa</button><button data-t="iz" style="--c:#a0522d">İzale-i Şuyu</button><button data-t="ms" style="--c:#4b5563">Masraflar</button>
+</nav>
+<div id="ayr" class="ayr" style="display:none">Bu cihazda yönetici değişiklikleri uygulanmış durumda (yalnızca sizin ekranınızda).</div>
+<div id="lbx" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.92);overflow:auto;padding:50px 6px 20px"><div style="position:fixed;top:10px;right:12px;color:#fff;font-size:15px;font-weight:700;background:#0008;padding:6px 12px;border-radius:8px">Kapat ✕</div><img id="lbi" style="width:100%;display:block"></div>
+<div class="fsx"><span style="font-size:13px">Yan çevirirseniz daha çok sütun görünür</span><button id="fsc">Kapat ✕</button></div>
+
+<section id="ad"><div class="w" style="max-width:760px">
+<h1>Yönetici ekranı</h1><div class="sub">Toplamlar ve yeni ödeme dağıtımı</div>
+<h2>Şu anki toplamlar</h2>
+<div class="ak" id="ak"></div>
+<h2>Ödeme kalemleri</h2>
+<div class="sub" style="margin:0 0 10px">Bir kalemin toplam tutarını değiştirin ya da yeni kalem ekleyin; tutar grup ve kişilere hisse oranına göre dağıtılır.</div>
+<div class="tg"><button id="eB12" class="on">1. ve 2. Şufa</button><button id="eB3">3. Şufa</button></div>
+<div id="eL"></div>
+<button id="eY" class="ey">+ Yeni ödeme kalemi ekle</button>
+<div id="eW" class="hint" style="margin:6px 0"></div>
+<div class="ab"><button id="eK">Kaydet ve tablolara uygula</button></div>
+<div class="ab" style="margin-top:0"><button id="eC" class="o">Değişiklikleri Claude için kopyala</button><button id="eR" class="o">Orijinale dön</button></div>
+<div id="eM" class="hint"></div>
+</div></section>
+<section id="ms"><div class="w">
+<h1>Masraflar</h1><div class="sub">Bugüne kadar yapılan ödemeler ve belgeleri</div>
+<div class="ak" id="msT"></div>
+<div class="tg" id="msf" style="flex-wrap:wrap;margin-top:12px"><button data-k="" class="on">Tümü</button><button data-k="12">1. ve 2. Şufa</button><button data-k="3">3. Şufa</button><button data-k="iz">İzale-i Şuyu</button></div>
+<div id="msL"></div>
+</div></section>
+<section id="du"><div class="w">
+<h1>Duyurular</h1><div class="sub">Davalarla ilgili son gelişmeler</div>
+<div class="tg" id="duf" style="flex-wrap:wrap"><button data-k="" class="on">Tümü</button><button data-k="12">1. ve 2. Şufa</button><button data-k="3">3. Şufa</button><button data-k="iz">İzale-i Şuyu</button></div>
+<div id="dulist"></div></div></section>
+
+<section id="od" class="on"><div class="w">
+<h1>Aydınevler Önalım Davaları</h1><div class="sub">Adınızı yazın, ödemelerinizi görün.</div>
+<input type="search" id="q" placeholder="Adınız soyadınız">
+<div id="out"><div class="hint">Adınızı ve soyadınızı yazın</div></div>
+<h2>Davaların durumu</h2><div id="dv"></div>
+<div style="text-align:center;margin-top:34px"><button id="yB" style="background:none;border:0;color:#aaa;font-size:13px;text-decoration:underline">Yönetici girişi</button></div>
+<div id="yP" style="display:none;margin-top:10px" class="af"><label>Yönetici şifresi<input id="yI" type="password" inputmode="numeric" placeholder="Şifre"></label><div class="ab" style="margin:0"><button id="yG">Giriş</button></div><div id="yM" class="hint" style="margin:4px"></div></div>
+</div></section>
+
+<section id="s12"><div class="w">
+<h1>1. ve 2. Şufa</h1><div class="sub">10 grup adına açılan davalar</div>
+<div class="cs"><div class="csh"><div><b>1. Şufa – Pelit İnşaat</b><small>1.376 m² · Dosya 2021/83</small></div><span class="st">Yeniden yargılama</span></div>
+<div class="csn">Üst mahkeme kararı kaldırdı, dava yeniden görülüyor.</div>
+<details class="csd"><summary>Dava süreci</summary><div class="ctl">
+<div><b>15.03.2021</b><span>Dava açıldı</span></div>
+<div><b>06.04.2021</b><span>Dava harcı ve avukat avansı (iki dava için)</span><em>100.000 ₺</em></div>
+<div><b>10.04.2023</b><span>Harç farkı</span><em>52.257 ₺</em></div>
+<div><b>13.04.2023</b><span>Arsa bedeli mahkemeye yatırıldı</span><em>5.100.000 ₺</em></div>
+<div><b>06.10.2023</b><span>Enflasyon farkı yatırıldı</span><em>1.304.025 ₺</em></div>
+<div><b>09.12.2023</b><span>Bilirkişi masrafı</span><em>4.000 ₺</em></div>
+<div><b>25.04.2024</b><span>İlk derece kararı</span></div>
+<div><b>18.02.2026</b><span>Bölge Adliye Mahkemesi kararı kaldırdı</span></div>
+<div><b>07.04.2026</b><span>Yeniden keşif masrafı (iki dava için, avukata)</span><em>26.000 ₺</em></div>
+<div><b>08.05.2026</b><span>Yeniden keşif: 3 bilirkişi × 7.500 ₺ (26.000 ₺ avanstan karşılandı)</span><em>22.500 ₺</em></div>
+<div><b>09.07.2026</b><span>Duruşma</span></div>
+</div></details></div>
+<div class="cs"><div class="csh"><div><b>2. Şufa – Alperen Ahmet Baş</b><small>982 m² · Dosya 2021/75</small></div><span class="st">Yeniden yargılama</span></div>
+<div class="csn">Kazanılmıştı, üst mahkeme bozdu; yeniden keşif yapılıyor.</div>
+<details class="csd"><summary>Dava süreci</summary><div class="ctl">
+<div><b>2021</b><span>Teminat mektubu (Süleyman Ö. çıkarttı)</span><em>105.000 ₺</em></div>
+<div><b>19.12.2023</b><span>Mahkeme bedelin yatırılmasına karar verdi</span></div>
+<div><b>28.12.2023</b><span>Arsa bedeli ve tapu harcı yatırıldı</span><em>1.020.000 ₺</em></div>
+<div><b>16.01.2024</b><span>Dava lehimize sonuçlandı (1.000.000 ₺ bedel üzerinden)</span></div>
+<div><b>2026</b><span>Üst mahkeme bozdu, yeniden keşif</span></div>
+<div><b>07.04.2026</b><span>Teminat mektubu komisyonu ödendi</span><em>20.000 ₺</em></div>
+</div></details></div>
+<h2>Gruplar</h2><div class="sub" style="margin:0 0 10px">Her grup toplamın 1/10'unu öder.</div>
+<div class="tg"><button id="vT" class="on">Tablo (Excel gibi)</button><button id="vK">Grup çıktısı</button></div>
+<div id="tb"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span class="kay" style="margin:0">Sağa kaydırın →</span><button id="fsb" class="fsb">⛶ Tam ekran</button></div><div class="xl" id="xl"></div></div>
+<div id="gr" style="display:none"></div>
+<div id="gcW" class="gc" style="display:none"><div class="sub" style="margin:0 0 8px">Grubunuzun tablosunu indirip WhatsApp grubunuza gönderebilirsiniz.</div>
+<select id="gcS"></select>
+<div class="ab" style="margin:8px 0 0"><button id="gcP">Görsel indir (PNG)</button><button id="gcD" class="o">PDF indir</button><button id="gcX" class="o">Excel indir</button></div>
+<div id="gcM" class="hint" style="margin:6px 0 0"></div><img id="gcI" style="width:100%;margin-top:10px;border:1px solid #cfe0f3;border-radius:8px;background:#fff" onclick="lb(this.src)"><div class="hint" style="margin:4px 0 0;font-size:12.5px">Önizleme · büyütmek için dokunun</div></div>
+<h2>Yapılan ödemeler</h2><div id="p1"></div>
+</div></section>
+
+<section id="s3"><div class="w">
+<h1>3. Şufa</h1><div class="sub">30 kişi adına açılan dava</div>
+<div class="cs g3"><div class="csh"><div><b>3. Şufa – Hasan Çelik / Pelit İnşaat</b><small>306,73 m² · Dosya 2022/673</small></div><span class="st k">Kazanıldı</span></div>
+<div class="csn">Dava kazanıldı, arsa bedeli mahkemeye yatırıldı.</div>
+<details class="csd"><summary>Dava süreci</summary><div class="ctl">
+<div><b>29.12.2022</b><span>Dava açıldı: dava harcı ve avukatlık ücreti</span><em>80.000 ₺</em></div>
+<div><b>19.07.2023</b><span>Keşif masraf avansı</span><em>15.000 ₺</em></div>
+<div><b>27.06.2024</b><span>Dava kazanıldı, arsa bedeli belirlendi (tapuda 6 milyon görünüyordu)</span><em>2.190.160 ₺</em></div>
+<div><b>18.07.2024</b><span>Arsa bedeli, tapu harcı ve harç farkı yatırıldı</span><em>2.237.963 ₺</em></div>
+</div></details></div>
+<h2>Katılımcılar</h2><div class="sub" style="margin:0 0 10px">Her kişi toplamın 1/30'unu öder.</div>
+<div class="tg"><button id="vT3" class="on">Tablo (Excel gibi)</button><button id="vK3">Çıktı</button></div>
+<div id="tb3"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span class="kay" style="margin:0">Sağa kaydırın →</span><button id="fsb3" class="fsb">⛶ Tam ekran</button></div><div class="xl" id="xl3"></div></div>
+<div id="gr3" style="display:none"></div>
+<div id="gc3W" class="gc g3c" style="display:none"><div class="sub" style="margin:0 0 8px">3. şufa tablosunu indirip WhatsApp grubuna gönderebilirsiniz.</div><div class="ab" style="margin:0"><button id="gc3P">Görsel indir (PNG)</button><button id="gc3D" class="o">PDF indir</button><button id="gc3X" class="o">Excel indir</button></div><div id="gc3M" class="hint" style="margin:6px 0 0"></div><img id="gc3I" style="width:100%;margin-top:10px;border:1px solid #cfe7da;border-radius:8px;background:#fff" onclick="lb(this.src)"><div class="hint" style="margin:4px 0 0;font-size:12.5px">Önizleme · büyütmek için dokunun</div></div>
+<h2>Yapılan ödemeler</h2><div id="p3"></div>
+</div></section>
+
+<section id="iz"><div class="w">
+<h1>İzale-i Şuyu</h1><div class="sub">Ortaklığın giderilmesi davası</div>
+<div class="info"><div class="dv" style="border:0;padding:0"><div><b>Pelit İnşaat'ın açtığı dava</b><div>Davalı: mahalle hissedarları</div></div><span class="st">Devam ediyor</span></div>
+<p>Pelit İnşaat, hisseli parselde ortaklığın giderilmesi için dava açtı. Mahalle olarak ortak avukatla savunma yapılıyor.</p></div>
+<h2>Yapılan ödemeler</h2>
+<div class="tl"><span>Avukatlık ücreti<small>04.12.2021</small></span><span class="n">41.250 ₺</span></div>
+<div class="row"><b>Kişi başı (28 kişi)</b><b class="n">1.500 ₺</b></div>
+</div></section>
+
+</div>
+<script type="text/plain" id="appjs">
+const D=window.__D;
+const tl=n=>new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0}).format(n)+' ₺';
+const norm=s=>s.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/\s+/g,' ').trim();
+const K12D=[{a:"Avukatlık ücreti ve dava harcı",k:"Avukat, harç",t:"Nis 2021",v:100000},{a:"Pelit 1.376 m² arsa bedeli, harç ve bilirkişi",k:"Pelit arsa",t:"Nis 2023",v:5152257},{a:"Pelit 1.376 m² enflasyon farkı",k:"Enflasyon farkı",t:"Eki 2023",v:1304025.29},{a:"Pelit 1.376 m² bilirkişi masrafı",k:"Bilirkişi",t:"Ara 2023",v:4000},{a:"A. Ahmet Baş 982 m² arsa bedeli ve tapu harcı",k:"A.A. Baş arsa",t:"Ara 2023",v:1020000},{a:"Üst mahkeme keşfi ve teminat komisyonu",k:"Keşif, teminat",t:"Nis 2026",v:46000},{a:"A. Ahmet Baş dosyası keşif ve bilirkişi masrafı (38.000 ₺) ve avukatta kalacak avans (62.000 ₺)",k:"Keşif, bilirkişi, avans",t:"Kas 2026",v:100000,p:1}];
+const K3D=[{a:"Dava harcı",k:"Dava harcı",t:"Ara 2022",v:35000},{a:"Avukatlık ücreti",k:"Avukatlık",t:"Ara 2022",v:45000},{a:"Masraf avansı",k:"Masraf avansı",t:"Tem 2023",v:15000},{a:"Arsa bedeli",k:"Arsa bedeli",t:"Tem 2024",v:2190160},{a:"Tapu harcı",k:"Tapu harcı",t:"Tem 2024",v:43803.2},{a:"Harç farkı",k:"Harç farkı",t:"Tem 2024",v:4000}];
+let K12=window.__K12||K12D,K3x=window.__K3||K3D,AYAR=false;
+
+D.gruplar.forEach(g=>{g.uyeler.forEach(u=>{u.odemeler=K12.map(k=>k.v*u.yuzde/100);u.odenen=u.odemeler.reduce((a,v,i)=>a+(K12[i].p?0:v),0);u.istenen=u.odemeler.reduce((a,v,i)=>a+(K12[i].p?v:0),0)});g.odenen=K12.reduce((a,k)=>a+(k.p?0:k.v),0)*g.yuzde/100;g.istenen=K12.reduce((a,k)=>a+(k.p?k.v:0),0)*g.yuzde/100});
+const KAL=K12.map(k=>k.a+' ('+k.t+')'+(k.p?' · İSTENEN':''));
+const S3=K3x.reduce((a,k)=>a+(k.p?0:k.v),0)/30,IST3=K3x.reduce((a,k)=>a+(k.p?k.v:0),0)/30;
+const DAVALAR=[
+ ["1. Şufa","Pelit İnşaat · 1.376 m²","Yeniden yargılama","Arsa bedeli (5.100.000 ₺) ve enflasyon farkı yatırıldı. Üst mahkeme kararı kaldırdı, yeniden keşif yapılıyor."],
+ ["2. Şufa","Alperen Ahmet Baş · 982 m²","Yeniden yargılama","16.01.2024'te kazanıldı. Üst mahkeme bozdu, yeniden keşif yapılıyor."],
+ ["3. Şufa","Hasan Çelik / Pelit İnşaat · 306,73 m²","Kazanıldı","27.06.2024'te kazanıldı. 2.237.963 ₺ yatırıldı, 30 kişi eşit paylaştı."],
+ ["İzale-i Şuyu","Pelit İnşaat'ın açtığı dava","Devam ediyor","Avukatlık ücreti 28 kişi arasında paylaşıldı."]];
+const P1=[["06.04.2021","Avukatlık ücreti (kısmi)",45396.45],["06.04.2021","Pelit – harç (2 milyon üzerinden)",54603.55],["10.04.2023","Pelit – harç farkı",52257],["13.04.2023","Pelit – arsa depo bedeli",5100000],["06.10.2023","Pelit – enflasyon farkı",1304025.29],["09.12.2023","Pelit – bilirkişi ücreti",4000],["28.12.2023","A. Ahmet Baş – arsa bedeli ve tapu",1020000],["07.04.2026","Üst mahkeme keşif bedeli",26000],["07.04.2026","Teminat mektubu komisyonu",20000]];
+const P3=[["29.12.2022","Dava harcı",35000],["29.12.2022","Avukatlık ücreti",45000],["19.07.2023","Dava masraf avansı",15000],["18.07.2024","Arsa depo bedeli",2190160],["18.07.2024","Tapu harcı",43803.2],["18.07.2024","Harç farkı",4000]];
+function kisi(n){const r=[];D.gruplar.forEach(g=>g.uyeler.forEach(u=>{if(u.ad===n)r.push({g:g.ad,u})}));return {r,s3:D.sufa3.includes(n)}}
+function adlar(q){q=norm(q);const t=q.split(' ');const mq=t.length>1?t.slice(0,-1).join(' ')+' '+t[t.length-1][0]:q;
+ const ok=n=>{const x=norm(n).replace(/\./g,'').replace(/\s*\(.*\)/,'');return x.includes(q)||x.startsWith(mq)||(' '+x).includes(' '+mq)};
+ const s=new Set();D.gruplar.forEach(g=>g.uyeler.forEach(u=>{if(ok(u.ad))s.add(u.ad)}));D.sufa3.forEach(n=>{if(ok(n))s.add(n)});return [...s]}
+K12.slice(6).filter(k=>!k.p).forEach(k=>P1.push([k.t,k.a,k.v]));K3x.slice(6).filter(k=>!k.p).forEach(k=>P3.push([k.t,k.a,k.v]));
+const ist1=K12.reduce((a,k)=>a+(k.p?k.v:0),0);const top1=K12.reduce((a,k)=>a+(k.p?0:k.v),0),top3=K3x.reduce((a,k)=>a+(k.p?0:k.v),0);
+
+const DUYURU=window.__DU;
+const IMG1='';
+const DK={"12":["1. ve 2. Şufa","#1f6fb2"],"3":["3. Şufa","#2e8b57"],"iz":["İzale-i Şuyu","#a0522d"]};
+const lb=src=>{document.getElementById('lbi').src=src;document.getElementById('lbx').style.display='block'};
+const AY=['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+const trt=t=>{const [g,a,y]=t.split('.');return `${+g} ${AY[a-1]} ${y}`};
+const tk=t=>t.split('.').reverse().join('');
+function duciz(k){const l=DUYURU.filter(d=>!k||d[0]==k).sort((a,b)=>tk(b[1]).localeCompare(tk(a[1])));document.getElementById('dulist').innerHTML=l.length?l.map(d=>`<div class="du" style="border-color:${DK[d[0]][1]}"><div class="dt"><span class="dd" style="background:${DK[d[0]][1]}">${trt(d[1])}</span><span style="color:${DK[d[0]][1]};font-weight:600;font-size:13px">${DK[d[0]][0]}</span></div><b>${d[2]}</b><p>${d[3].replace(/\*(.+?)\*/g,'<b style="display:inline;margin:0">$1</b>')}</p>${d[4]?[].concat(d[4]).map(x=>`<img src="${x=='IMG1'?IMG1:x}" style="width:100%;margin-top:10px;border:1px solid #ddd;border-radius:8px" onclick="lb(this.src)">`).join(''):''}</div>`).join(''):'<div class="hint">Bu başlıkta henüz duyuru yok.</div>'}
+document.querySelectorAll('#duf button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#duf button').forEach(x=>x.classList.remove('on'));b.classList.add('on');duciz(b.dataset.k)});duciz('');
+document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>{if(location.hash)history.replaceState(null,'',location.pathname+location.search);document.querySelectorAll('#nav button,section').forEach(e=>e.classList.remove('on'));b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on');window.scrollTo(0,0)});
+document.getElementById('dv').innerHTML=DAVALAR.map(d=>`<div class="dv"><div><b>${d[0]}</b><div>${d[1]}</div></div><span class="st ${d[2]=='Kazanıldı'?'k':''}">${d[2]}</span></div>`).join('');
+const out=document.getElementById('out');
+const RENK=['#c0392b','#1f6fb2','#2e8b57','#d4801a','#7b4fb0','#c2477f','#138a8a','#8a6d1f','#4b5d73','#a0522d'];
+const rk=ad=>RENK[D.gruplar.findIndex(g=>g.ad===ad)%10];
+const pct=v=>'%'+v.toLocaleString('tr-TR',{maximumFractionDigits:2});
+const m2=v=>v.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2})+' m²';
+const S3M=306.73/30;
+const hisse=(u,grp)=>`<div class="row"><span>Toplam hissedeki oranı</span><span class="n">${pct(u.yuzde)}</span></div>`+
+ `<div class="row"><span>Pelit 1.376 m²'den alacağı</span><span class="n">${m2(u.m1376)}</span></div><div class="row"><span>A. Ahmet Baş 982 m²'den alacağı</span><span class="n">${m2(u.m982)}</span></div><div class="row"><b>Toplam alacağı arsa</b><b class="n">${m2(u.m2)}</b></div>`;
+const ara=t=>`<div style="font-size:12px;color:#555;font-weight:600;letter-spacing:.04em;margin:12px 6px 2px">${t}</div>`;
+const dokum=u=>u.odemeler.map((v,i)=>v?`<div class="row"${K12[i].p?' style="background:#fff4e0;color:#b45309;font-weight:600"':''}><span>${KAL[i]}</span><span class="n">${tl(v)}</span></div>`:'').join('');
+function kart(renk,baslik,alt,yuz,m,mAlt,od,dok){return `<div class="oc" style="border-top:5px solid ${renk}">
+<div class="oct" style="color:${renk}">${baslik}</div>${alt?`<div class="ocs">${alt}</div>`:''}
+<div class="ocg"><div><small>Hisse</small><b>${yuz}</b></div><div><small>Alacağı arsa</small><b>${m}</b>${mAlt?`<em>${mAlt}</em>`:''}</div><div><small>Ödenen</small><b>${od}</b></div></div>
+<details class="ocd"><summary>Ödeme dökümünü göster</summary><div>${dok}</div></details></div>`}
+function goster(n){const k=kisi(n);let t=0,m=0;k.r.forEach(x=>{t+=x.u.odenen;m+=x.u.m2});if(k.s3){t+=S3;m+=S3M}
+ let h=`<div class="big"><small>${n}</small><div class="bg2"><div><span>Toplam ödenen</span><b>${tl(t)}</b></div><div><span>Alacağı toplam arsa</span><b>${m2(m)}</b></div></div></div>`;
+ {const ist=k.r.reduce((a,x)=>a+x.u.istenen,0)+(k.s3?IST3:0);const ne=(k.r.length?K12.filter(k=>k.p).map(k=>'1-2. Şufa: '+k.k+' · '+k.t):[]).concat(k.s3?K3x.filter(k=>k.p).map(k=>'3. Şufa: '+k.k+' · '+k.t):[]);if(ist>0)h+=`<div class="ist"><div><b>Yeni istenen ödemeniz</b><span>${ne.join('<br>')}</span></div><b class="n">${tl(ist)}</b></div>`}
+ k.r.forEach(x=>{const nm=x.g.split(' – ');h+=kart(rk(x.g),'1. ve 2. Şufa · '+nm[0],'Grup sorumlusu: '+(nm[1]||''),pct(x.u.yuzde),m2(x.u.m2),`Pelit ${m2(x.u.m1376)} · A.A. Baş ${m2(x.u.m982)}`,tl(x.u.odenen)+(x.u.istenen?`<em style="color:#b45309;font-weight:700">+ ${tl(x.u.istenen)} istenen</em>`:''),dokum(x.u)+`<div class="row"><b>Toplam</b><b class="n">${tl(x.u.odenen)}</b></div>`)});
+ if(k.s3)h+=kart(c3,'3. Şufa','Hasan Çelik / Pelit İnşaat','%3,33',m2(S3M),'',tl(S3)+(IST3?`<em style="color:#b45309;font-weight:700">+ ${tl(IST3)} istenen</em>`:''),dok3()+`<div class="row"><b>Toplam</b><b class="n">${tl(S3)}</b></div>`);
+ out.innerHTML=h}
+document.getElementById('q').oninput=e=>{const v=e.target.value;if(norm(v).length<3){out.innerHTML='<div class="hint">En az 3 harf yazın.</div>';return}
+ const a=adlar(v);if(!a.length){out.innerHTML='<div class="hint">Bu isimde kayıt yok.</div>';return}
+ if(a.length==1)return goster(a[0]);out.innerHTML=a.slice(0,8).map(n=>`<button class="pick">${n}</button>`).join('');
+ out.querySelectorAll('.pick').forEach(b=>b.onclick=()=>goster(b.textContent))};
+document.getElementById('gr').innerHTML=D.gruplar.map((g,i)=>`<details style="border-left:6px solid ${RENK[i]};background:${RENK[i]}0d"><summary><span><b style="color:${RENK[i]}">${g.ad}</b><br><small style="color:#888">${g.uyeler.length} kişi · ${pct(g.yuzde)} hisse · ${m2(g.m2)}</small></span><span class="n">${tl(g.odenen)}</span></summary><div class="in">${ara('GRUBUN HİSSESİ')}${hisse(g,1)}${ara('ÜYELER')}
+ ${g.uyeler.map(u=>`<details><summary><span>${u.ad}<br><small style="color:#888">${pct(u.yuzde)} · ${m2(u.m2)}</small></span><span class="n">${tl(u.odenen)}</span></summary><div class="in">${ara('HİSSE BİLGİSİ')}${hisse(u)}${ara('ÖDEMELER')}${dokum(u)}</div></details>`).join('')}</div></details>`).join('');
+const tlist=arr=>arr.map(p=>`<div class="tl"><span>${p[1]}<small>${p[0]}</small></span><span class="n">${tl(p[2])}</span></div>`).join('');
+document.getElementById('p1').innerHTML=tlist(P1)+`<div class="row"><b>Toplam</b><b class="n">${tl(top1)}</b></div>`;
+document.getElementById('p3').innerHTML=tlist(P3)+`<div class="row"><b>Toplam</b><b class="n">${tl(top3)}</b></div>`;
+
+
+const KB=K12.map((k,i)=>k.p?`<div class="pth">${i+1}. Ödeme<span>İSTENEN</span><small>${k.k}<br>${k.t}</small></div>`:`${i+1}. Ödeme<br><small>${k.k}<br>${k.t}</small>`);
+const PC=(i,v,b)=>K12[i].p?`<td style="background:#fff4e0;color:#b45309;font-weight:700">${v}</td>`:`<td${b||''}>${v}</td>`;
+const nn=v=>new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0}).format(v);
+const n2=v=>v.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2});
+(function(){let h='<table><thead><tr><th class="c1">Ad Soyad</th><th>Hisse<br>Oranı %</th><th>Pelit<br>Alncak<br>M2</th><th>Alp. A. Baş<br>Alncak<br>M2</th><th>Top.<br>Alncak<br>M2</th>'+KB.map((k,i)=>`<th${K12[i].p?' class="pt"':''}>${k}</th>`).join('')+'<th>TOPLAM<br>ÖDENEN</th></tr></thead><tbody>';
+ const T=K12.map(()=>0);let TT=0;
+ D.gruplar.forEach((g,i)=>{const c=RENK[i],bg=c+'22';const S=K12.map(k=>k.v*g.yuzde/100);S.forEach((v,j)=>T[j]+=v);TT+=g.odenen;
+  const st=`style="background:linear-gradient(${bg},${bg}),#fff;color:${c}"`;
+  h+=`<tr class="gr"><td class="c1" ${st}>${g.ad}</td><td ${st}>%${n2(g.yuzde)}</td><td ${st}>${n2(g.m1376)}</td><td ${st}>${n2(g.m982)}</td><td ${st}>${n2(g.m2)}</td>${S.map((v,i)=>K12[i].p?PC(i,nn(v)):`<td ${st}>${nn(v)}</td>`).join('')}<td ${st}>${nn(g.odenen)}</td></tr>`;
+  if(!g.uyeler.length)h+=`<tr><td class="c1" style="color:#999;font-size:12px;border-left:5px solid ${c}">🔒 Kişi bilgileri yalnızca grup üyelerine açık</td><td colspan="${K12.length+5}" style="background:#fafafa"></td></tr>`;
+  g.uyeler.forEach(u=>{h+=`<tr><td class="c1" style="border-left:5px solid ${c}">${u.ad}</td><td>%${n2(u.yuzde)}</td><td>${n2(u.m1376)}</td><td>${n2(u.m982)}</td><td>${n2(u.m2)}</td>${u.odemeler.map((v,i)=>PC(i,v?nn(v):'–')).join('')}<td><b>${nn(u.odenen)}</b></td></tr>`})});
+ h+=`<tr class="tp"><td class="c1" style="background:#e5f1ec">GENEL TOPLAM</td><td>%100</td><td>${n2(1376)}</td><td>${n2(982.33)}</td><td>${n2(2358.33)}</td>${T.map((v,i)=>PC(i,nn(v))).join('')}<td>${nn(TT)}</td></tr></tbody></table>`;
+ document.getElementById('xl').innerHTML=h})();
+document.getElementById('fsb').onclick=()=>{document.getElementById('xl').classList.add('fs');document.body.classList.add('fsm')};
+document.getElementById('fsc').onclick=()=>{document.getElementById('xl').classList.remove('fs');document.body.classList.remove('fsm')};
+const vT=document.getElementById('vT'),vK=document.getElementById('vK');
+vT.onclick=()=>{vT.classList.add('on');vK.classList.remove('on');document.getElementById('tb').style.display='';document.getElementById('gcW').style.display='none'};
+vK.onclick=()=>{vK.classList.add('on');vT.classList.remove('on');document.getElementById('tb').style.display='none';document.getElementById('gcW').style.display=''};
+
+const K3=K3x.map(k=>[k.a,k.t,k.v/30,k.p]);
+const PC3=(i,v)=>K3[i][3]?`<td style="background:#fff4e0;color:#b45309;font-weight:700">${v}</td>`:`<td>${v}</td>`;
+const c3='#2e8b57';
+const dok3=()=>K3.map(k=>`<div class="row"${k[3]?' style="background:#fff4e0;color:#b45309;font-weight:600"':''}><span>${k[0]} (${k[1]})${k[3]?' · İSTENEN':''}</span><span class="n">${tl(k[2])}</span></div>`).join('');
+const his3=()=>`<div class="row"><span>Toplam hissedeki oranı</span><span class="n">%3,33</span></div><div class="row"><b>Alacağı arsa</b><b class="n">${m2(S3M)}</b></div>`;
+(function(){let h='<table><thead><tr><th class="c1">Ad Soyad</th><th>Hisse<br>%</th><th>Alacağı<br>m²</th>'+K3.map((k,i)=>k[3]?`<th class="pt"><div class="pth">${i+1}. Ödeme<span>İSTENEN</span><small>${k[0]}<br>${k[1]}</small></div></th>`:`<th>${i+1}. Ödeme<br><small>${k[0]}<br>${k[1]}</small></th>`).join('')+'<th>TOPLAM<br>ÖDENEN</th></tr></thead><tbody>';
+ D.sufa3.forEach((n,i)=>{h+=`<tr><td class="c1" style="border-left:5px solid ${c3}">${i+1}. ${n}</td><td>%3,33</td><td>${n2(S3M)}</td>${K3.map((k,i)=>PC3(i,nn(k[2]))).join('')}<td><b>${nn(S3)}</b></td></tr>`});
+ h+=`<tr class="tp"><td class="c1" style="background:#e5f1ec">GENEL TOPLAM</td><td>%100</td><td>${n2(306.73)}</td>${K3.map((k,i)=>PC3(i,nn(k[2]*30))).join('')}<td>${nn(S3*30)}</td></tr></tbody></table>`;
+ document.getElementById('xl3').innerHTML=h})();
+document.getElementById('gr3').innerHTML=`<details style="border-left:6px solid ${c3};background:${c3}0d" open><summary><span><b style="color:${c3}">3. Şufa – 30 kişi</b><br><small style="color:#888">%100 hisse · 306,73 m²</small></span><span class="n">${tl(S3*30)}</span></summary><div class="in">`+D.sufa3.map((n,i)=>`<details><summary><span>${i+1}. ${n}<br><small style="color:#888">%3,33 · ${m2(S3M)}</small></span><span class="n">${tl(S3)}</span></summary><div class="in">${ara('HİSSE BİLGİSİ')}${his3()}${ara('ÖDEMELER')}${dok3()}</div></details>`).join('')+'</div></details>';
+const vT3=document.getElementById('vT3'),vK3=document.getElementById('vK3');
+vT3.onclick=()=>{vT3.classList.add('on');vK3.classList.remove('on');document.getElementById('tb3').style.display='';document.getElementById('gc3W').style.display='none'};
+vK3.onclick=()=>{vK3.classList.add('on');vT3.classList.remove('on');document.getElementById('tb3').style.display='none';document.getElementById('gc3W').style.display='';on3()};
+document.getElementById('fsb3').onclick=()=>{document.getElementById('xl3').classList.add('fs');document.body.classList.add('fsm')};
+document.getElementById('fsc').onclick=()=>{document.querySelectorAll('.xl').forEach(x=>x.classList.remove('fs'));document.body.classList.remove('fsm')};
+
+
+(function(){
+ if(AYAR)document.getElementById('ayr').style.display='';
+ {const m12=2358.33;document.getElementById('ak').innerHTML=[['1. ve 2. Şufa ödenen',tl(top1)],['Grup başı ödenen',tl(top1/10)],['3. Şufa ödenen',tl(S3*30)],['3. Şufa kişi başı',tl(S3)],['İzale-i Şuyu ödenen',tl(41250)],['Genel toplam',tl(top1+S3*30+41250)],['1. ve 2. Şufa yeni istenen',tl(ist1)],['Grup başı istenen',tl(ist1/10)],['3. Şufa yeni istenen',tl(IST3*30)],['3. Şufa kişi başı istenen',tl(IST3)],['1. ve 2. Şufa arsa',m2(m12)],['3. Şufa arsa',m2(306.73)]].map(x=>`<div><small>${x[0]}</small><b>${x[1]}</b></div>`).join('')}
+ const fx=v=>v.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2});
+ const pn=x=>{x=String(x).trim();if(!x)return 0;if(x.includes(','))x=x.replace(/\./g,'').replace(',','.');else if(/^\d{1,3}(\.\d{3})+$/.test(x))x=x.replace(/\./g,'');return parseFloat(x)||0};
+ let E={k12:JSON.parse(JSON.stringify(K12)),k3:JSON.parse(JSON.stringify(K3x))},sec='k12';
+ const n0={k12:K12D.length,k3:K3D.length};
+ const L=document.getElementById('eL');
+ function bilgi(k,v){if(k=='k12'){const e=D.gruplar[1].uyeler[0];return `Grup başı ${fx(v/10)} ₺`}return `Kişi başı ${fx(v/30)} ₺`}
+ function ciz(){const A=E[sec];L.innerHTML=A.map((k,i)=>`<div class="er ${i>=n0[sec]?'yeni':''}" data-i="${i}"><div class="r1"><span class="no">${i+1}.</span><input class="ea" value="${k.a.replace(/"/g,'&quot;')}" placeholder="Açıklama"><input class="et" value="${k.t}" placeholder="Tarih"></div>
+ <div class="r2"><input class="ev" inputmode="decimal" value="${fx(k.v)}"><span style="font-size:14px">₺</span></div>
+ <label style="display:flex;gap:6px;align-items:center;font-size:13px;color:#b45309;margin-top:6px"><input type="checkbox" class="ep" ${k.p?'checked':''} style="width:18px;height:18px"> İstenen (henüz ödenmedi)</label><div class="r2"><small class="eb">${bilgi(sec,k.v)}</small><button class="ew">WhatsApp metni</button>${i>=n0[sec]?'<button class="ed">Sil</button>':''}</div></div>`).join('');
+  L.querySelectorAll('.er').forEach(r=>{const i=+r.dataset.i,k=E[sec][i];
+   r.querySelector('.ea').oninput=e=>{k.a=e.target.value;k.k=e.target.value.slice(0,16)};
+   r.querySelector('.et').oninput=e=>k.t=e.target.value;r.querySelector('.ep').onchange=e=>{if(e.target.checked)k.p=1;else delete k.p};
+   r.querySelector('.ev').oninput=e=>{k.v=pn(e.target.value);r.querySelector('.eb').textContent=bilgi(sec,k.v)};
+   r.querySelector('.ew').onclick=()=>kopya(metin(sec,k),'Dağıtım metni kopyalandı, WhatsApp\'a yapıştırabilirsiniz.');
+   const d=r.querySelector('.ed');if(d)d.onclick=()=>{E[sec].splice(i,1);ciz()}})}
+ function metin(sec,k){const t=[(k.a||'ÖDEME').toLocaleUpperCase('tr-TR'),'Toplam: '+fx(k.v)+' TL'+(k.t?' · '+k.t:''),''];
+  if(sec=='k12')D.gruplar.forEach(g=>{t.push(g.ad+': '+fx(k.v*g.yuzde/100)+' TL');g.uyeler.forEach(u=>t.push('   '+u.ad+': '+fx(k.v*u.yuzde/100)+' TL'));t.push('')});
+  else D.sufa3.forEach((n,i)=>t.push((i+1)+'. '+n+': '+fx(k.v/30)+' TL'));return t.join('\n')}
+ function kopya(x,m){const M=document.getElementById('eM');navigator.clipboard.writeText(x).then(()=>M.textContent=m).catch(()=>{M.innerHTML='<textarea style="width:100%;height:160px">'+x.replace(/</g,'&lt;')+'</textarea>Metni seçip kopyalayın.'})}
+ const B12=document.getElementById('eB12'),B3=document.getElementById('eB3');
+ B12.onclick=()=>{sec='k12';B12.classList.add('on');B3.classList.remove('on');ciz()};B3.onclick=()=>{sec='k3';B3.classList.add('on');B12.classList.remove('on');ciz()};
+ document.getElementById('eY').onclick=()=>{E[sec].push({a:'Yeni ödeme',k:'Yeni ödeme',t:'',v:0});ciz();const x=L.querySelectorAll('.ev');x[x.length-1].focus()};
+ document.getElementById('eK').onclick=()=>{document.getElementById('eM').textContent='Kaydediliyor…';window.__kaydetK(E).catch(e=>document.getElementById('eM').textContent='Hata: '+e.message)};
+ document.getElementById('eR').onclick=()=>{try{localStorage.removeItem('aydinevlerOdeme');localStorage.setItem('aydinevlerAdmin','1')}catch(e){}location.reload()};
+ document.getElementById('eC').onclick=()=>kopya('AYDINEVLER ÖDEME DEĞİŞİKLİĞİ\n'+JSON.stringify(E),'Kopyalandı. Claude\'a yapıştırın, herkes için yayınlasın.');
+ ciz();
+ try{if(localStorage.getItem('aydinevlerAdmin')){localStorage.removeItem('aydinevlerAdmin');document.querySelectorAll('#nav button,section').forEach(e=>e.classList.remove('on'));document.getElementById('ad').classList.add('on')}}catch(e){}
+ function rota(){if(location.hash=='#yonetici'){document.querySelectorAll('#nav button,section').forEach(e=>e.classList.remove('on'));document.getElementById('ad').classList.add('on')}}
+ window.addEventListener('hashchange',rota);rota();
+})();
+
+(function(){const P=null;
+ document.getElementById('yB').onclick=()=>{const p=document.getElementById('yP');p.style.display=p.style.display=='none'?'':'none'};
+ const gir=()=>{if(document.getElementById('yI').value.trim()===P){document.querySelectorAll('#nav button,section').forEach(e=>e.classList.remove('on'));document.getElementById('ad').classList.add('on');window.scrollTo(0,0);document.getElementById('yI').value='';document.getElementById('yP').style.display='none'}else document.getElementById('yM').textContent='Şifre hatalı.'};
+ document.getElementById('yG').onclick=gir;document.getElementById('yI').onkeydown=e=>{if(e.key=='Enter')gir()};})();
+
+(function(){
+ const S=document.getElementById('gcS');S.innerHTML=D.gruplar.map((g,i)=>g.uyeler.length?`<option value="${i}">${g.ad}</option>`:'').join('');
+ const M=document.getElementById('gcM');
+ const fx=v=>v.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2});
+ function tablo(baslik,alt,c,cols,rows,nGen,not){
+  {const mc=document.createElement('canvas').getContext('2d');cols.forEach((cl,ci)=>{let m=0;cl.L.forEach(l=>{mc.font=l[1]?'bold 20px Arial, sans-serif':'17px Arial, sans-serif';m=Math.max(m,mc.measureText(l[0]).width)});
+   mc.font='bold 22px Arial, sans-serif';rows.forEach(r=>m=Math.max(m,mc.measureText(r.v[ci]).width));cl.w=Math.ceil(m)+(ci==0?22:24)})}
+  const HL=Math.max(...cols.map(c=>c.L.length)),HH=HL*26+16,RH=56,top=184+HH,W=Math.max(cols.reduce((a,c)=>a+c.w,0)+60,1100),H=top+RH*rows.length+80;
+  const cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');
+  x.fillStyle='#fff';x.fillRect(0,0,W,H);x.fillStyle=c;x.fillRect(0,0,W,14);
+  x.fillStyle='#222';x.font='bold 40px Arial, sans-serif';x.fillText(baslik,30,72);
+  x.fillStyle='#666';x.font='24px Arial, sans-serif';x.fillText(alt,30,112);x.fillText('Çıktı tarihi: '+new Date().toLocaleDateString('tr-TR'),30,146);
+  let X=30;x.fillStyle=c+'22';x.fillRect(30,top-HH,W-60,HH+4);
+  cols.forEach(cl=>{if(cl.p){x.fillStyle='#e8890c';x.fillRect(X,top-HH,cl.w,HH+4)}const tx=cl.al=='l'?X+10:X+cl.w-10;x.textAlign=cl.al=='l'?'left':'right';let y=top-10;[...cl.L].reverse().forEach(l=>{
+   if(l[0]=='İSTENEN'){x.font='bold 21px Arial, sans-serif';const w=x.measureText(l[0]).width+16;x.fillStyle='#fff';x.fillRect(tx-w,y-21,w,27);x.fillStyle='#c2410c';x.fillText(l[0],tx-8,y)}
+   else{x.font=l[1]?'bold 20px Arial, sans-serif':'17px Arial, sans-serif';x.fillStyle=cl.p?'#fff':(l[1]?'#333':'#666');x.fillText(l[0],tx,y)}y-=l[1]?27:21});X+=cl.w});
+  rows.forEach((r,ri)=>{const y=top+4+ri*RH;
+   x.fillStyle=r.t=='gen'?'#2f3b45':(r.t=='top'?c+'22':(ri%2?'#f7f8f8':'#fff'));x.fillRect(30,y,W-60,RH);
+   x.strokeStyle='#e3e6e5';x.beginPath();x.moveTo(30,y+RH);x.lineTo(W-30,y+RH);x.stroke();
+   let X=30;r.v.forEach((v,ci)=>{const cl=cols[ci],pend=cl.p,gen=r.t=='gen';if(pend&&!gen){x.fillStyle='#fff4e0';x.fillRect(X,y,cl.w,RH)}
+    x.font=(r.t||ci==r.v.length-1||pend?'bold ':'')+'22px Arial, sans-serif';x.fillStyle=gen?(pend?'#ffc56b':'#fff'):(pend?'#b45309':(r.t=='top'?c:'#222'));
+    x.textAlign=cl.al=='l'?'left':'right';x.fillText(v,cl.al=='l'?X+10:X+cl.w-10,y+36);X+=cl.w})});
+  x.textAlign='left';x.fillStyle='#888';x.font='20px Arial, sans-serif';x.fillText(not,30,H-36);return cv}
+ function ciz(gi){const g=D.gruplar[gi],c=RENK[gi],K=K12;
+  const cols=[{L:[['Ad Soyad',1]],al:'l'},{L:[['Hisse',1],['Oranı',1],['%',1]]},{L:[['Pelit',1],['Alncak',1],['M2',1]]},{L:[['Alp. A. Baş',1],['Alncak',1],['M2',1]]},{L:[['Top.',1],['Alncak',1],['M2',1]]}].concat(K.map((k,i)=>({p:k.p,L:k.p?[[(i+1)+'. Ödeme',1],['İSTENEN',1],[k.k,0],[k.t,0]]:[[(i+1)+'. Ödeme',1],[k.k,0],[k.t,0]]})),[{L:[['TOPLAM',1],['ÖDENEN',1]]}]);
+  const rows=g.uyeler.map(u=>({v:[u.ad,'%'+n2(u.yuzde),n2(u.m1376),n2(u.m982),n2(u.m2)].concat(u.odemeler.map(fx),[fx(u.odenen)])}));
+  rows.push({t:'top',v:['GRUP TOPLAMI','%'+n2(g.yuzde),n2(g.m1376),n2(g.m982),n2(g.m2)].concat(K.map(k=>fx(k.v*g.yuzde/100)),[fx(g.odenen)])});
+  rows.push({t:'gen',v:['10 GRUP GEN. TOP.','%100,00',n2(1376),n2(982.33),n2(2358.33)].concat(K.map(k=>fx(k.v)),[fx(top1)])});
+  return tablo('Aydınevler 1. ve 2. Şufa – '+g.ad,'Grup hissesi %'+n2(g.yuzde)+' · '+n2(g.m2)+' m² · Toplam ödenen '+fx(g.odenen)+' ₺'+(g.istenen?' · Yeni istenen '+fx(g.istenen)+' ₺':''),c,cols,rows,0,'Her kişinin payı, hissesinin toplam arsadaki oranına göre hesaplanmıştır.')}
+ function ciz3(){const K=K3x;
+  const cols=[{L:[['Ad Soyad',1]],al:'l'},{L:[['Hisse',1],['Oranı',1],['%',1]]},{L:[['Alncak',1],['M2',1]]}].concat(K.map((k,i)=>({p:k.p,L:k.p?[[(i+1)+'. Ödeme',1],['İSTENEN',1],[k.k,0],[k.t,0]]:[[(i+1)+'. Ödeme',1],[k.k,0],[k.t,0]]})),[{L:[['TOPLAM',1],['ÖDENEN',1]]}]);
+  const rows=D.sufa3.map((n,i)=>({v:[(i+1)+'. '+n,'%3,33',n2(S3M)].concat(K.map(k=>fx(k.v/30)),[fx(S3)])}));
+  rows.push({t:'gen',v:['30 KİŞİ GEN. TOP.','%100,00',n2(306.73)].concat(K.map(k=>fx(k.v)),[fx(top3)])});
+  return tablo('Aydınevler 3. Şufa – Hasan Çelik / Pelit İnşaat','30 katılımcı · 306,73 m² · Toplam ödenen '+fx(top3)+' ₺'+(IST3?' · Yeni istenen '+fx(IST3*30)+' ₺':''),c3,cols,rows,0,"Her katılımcı toplamın 1/30’unu öder.")}
+ function pdfYap(cv){const j=atob(cv.toDataURL('image/jpeg',0.92).split(',')[1]);const W=cv.width,H=cv.height;
+  const pw=842,ph=Math.round(842*H/W);const enc=new TextEncoder();const parts=[];let off=0;const xr=[];
+  const add=b=>{parts.push(b);off+=b.length};const str=t=>add(enc.encode(t));
+  const img=new Uint8Array(j.length);for(let i=0;i<j.length;i++)img[i]=j.charCodeAt(i);
+  str('%PDF-1.4\n');
+  const obj=(n,body)=>{xr[n]=off;str(n+' 0 obj\n'+body+'\nendobj\n')};
+  obj(1,'<< /Type /Catalog /Pages 2 0 R >>');obj(2,'<< /Type /Pages /Kids [3 0 R] /Count 1 >>');
+  obj(3,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pw} ${ph}] /Resources << /XObject << /Im0 4 0 R >> >> /Contents 5 0 R >>`);
+  xr[4]=off;str(`4 0 obj\n<< /Type /XObject /Subtype /Image /Width ${W} /Height ${H} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${img.length} >>\nstream\n`);add(img);str('\nendstream\nendobj\n');
+  const cs=`q ${pw} 0 0 ${ph} 0 0 cm /Im0 Do Q`;obj(5,`<< /Length ${cs.length} >>\nstream\n${cs}\nendstream`);
+  const xo=off;str('xref\n0 6\n0000000000 65535 f \n'+[1,2,3,4,5].map(n=>String(xr[n]).padStart(10,'0')+' 00000 n \n').join('')+'trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n'+xo+'\n%%EOF');
+  return new Blob(parts,{type:'application/pdf'})}
+ const ad=gi=>'Aydinevler-'+D.gruplar[gi].ad.split(' –')[0].replace(/\.| /g,'')+'-'+new Date().toISOString().slice(0,10);
+ function goster(cv){lb(cv.toDataURL('image/png'));M.textContent='İndirme bu görünümde kullanılamıyor. Açılan görsele basılı tutup kaydedebilirsiniz.'}
+ async function indir(tip){const gi=+S.value,cv=ciz(gi);M.textContent='Hazırlanıyor…';
+  let dl=null;try{dl=window.claude&&await Promise.race([claude.use('downloads'),new Promise(r=>setTimeout(()=>r(null),4000))])}catch(e){}
+  if(!dl){goster(cv);return}
+  try{const data=tip=='pdf'?pdfYap(cv):await new Promise(r=>cv.toBlob(r,'image/png'));
+   await dl.save({filename:ad(gi)+'.'+tip,data});M.textContent='Kaydedildi. WhatsApp grubunuza gönderebilirsiniz.'}
+  catch(e){if(e&&e.code=='declined')M.textContent='İndirme iptal edildi.';else goster(cv)}}
+ const on=()=>{document.getElementById('gcI').src=ciz(+S.value).toDataURL('image/png')};S.onchange=on;document.getElementById('vK').addEventListener('click',on);
+ document.getElementById('gcP').onclick=()=>indir('png');
+ const M3=document.getElementById('gc3M');window.on3=()=>{document.getElementById('gc3I').src=ciz3().toDataURL('image/png')};
+ async function indir3(tip){const cv=ciz3();M3.textContent='Hazırlanıyor…';let dl=null;try{dl=window.claude&&await Promise.race([claude.use('downloads'),new Promise(r=>setTimeout(()=>r(null),4000))])}catch(e){}
+  if(!dl){lb(cv.toDataURL('image/png'));M3.textContent='İndirme bu görünümde kullanılamıyor. Açılan görsele basılı tutup kaydedebilirsiniz.';return}
+  try{const data=tip=='pdf'?pdfYap(cv):await new Promise(r=>cv.toBlob(r,'image/png'));await dl.save({filename:'Aydinevler-3Sufa-'+new Date().toISOString().slice(0,10)+'.'+tip,data});M3.textContent='Kaydedildi. WhatsApp grubunuza gönderebilirsiniz.'}
+  catch(e){if(e&&e.code=='declined')M3.textContent='İndirme iptal edildi.';else{lb(cv.toDataURL('image/png'));M3.textContent='Açılan görsele basılı tutup kaydedebilirsiniz.'}}}
+ document.getElementById('gc3P').onclick=()=>indir3('png');document.getElementById('gc3D').onclick=()=>indir3('pdf');document.getElementById('gcD').onclick=()=>indir('pdf');
+})();
+
+(function(){
+ function crc(d){let c,t=crc.t;if(!t){t=crc.t=[];for(let n=0;n<256;n++){c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}}c=0xFFFFFFFF;for(let i=0;i<d.length;i++)c=t[(c^d[i])&255]^(c>>>8);return(c^0xFFFFFFFF)>>>0}
+ function zip(files){const enc=new TextEncoder(),parts=[],cd=[];let off=0;
+  const u16=v=>[v&255,(v>>8)&255],u32=v=>[v&255,(v>>8)&255,(v>>16)&255,(v>>>24)&255];
+  files.forEach(f=>{const nm=enc.encode(f[0]),d=enc.encode(f[1]),c=crc(d);
+   const lh=[0x50,0x4b,3,4,...u16(20),...u16(0x800),...u16(0),...u16(0),...u16(0x21),...u32(c),...u32(d.length),...u32(d.length),...u16(nm.length),...u16(0)];
+   parts.push(new Uint8Array(lh),nm,d);
+   cd.push(new Uint8Array([0x50,0x4b,1,2,...u16(20),...u16(20),...u16(0x800),...u16(0),...u16(0),...u16(0x21),...u32(c),...u32(d.length),...u32(d.length),...u16(nm.length),...u16(0),...u16(0),...u16(0),...u16(0),...u32(0),...u32(off)]),nm);
+   off+=lh.length+nm.length+d.length});
+  const cds=cd.reduce((a,x)=>a+x.length,0);parts.push(...cd,new Uint8Array([0x50,0x4b,5,6,...u16(0),...u16(0),...u16(files.length),...u16(files.length),...u32(cds),...u32(off),...u16(0)]));
+  const tot=parts.reduce((a,x)=>a+x.length,0),out=new Uint8Array(tot);let p=0;parts.forEach(x=>{out.set(x,p);p+=x.length});return out}
+ function xlsx(v){const esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const col=i=>{let s='';i++;while(i){const m=(i-1)%26;s=String.fromCharCode(65+m)+s;i=Math.floor((i-1)/26)}return s};
+  const aoa=[[v.baslik],[v.alt],[],v.h].concat(v.R);const nT=v.R.length-v.n;
+  const rows=aoa.map((r,ri)=>{const bold=ri==0||ri==3||(ri>=4+nT);return `<row r="${ri+1}"${ri==3?' ht="45" customHeight="1"':''}>`+r.map((x,ci)=>{const ref=col(ci)+(ri+1);
+    if(typeof x=='number')return `<c r="${ref}" s="${bold?3:1}"><v>${x}</v></c>`;
+    return `<c r="${ref}" t="inlineStr" s="${ri==3?(String(x).includes('İSTENEN')?5:4):(bold?2:0)}"><is><t>${esc(x)}</t></is></c>`}).join('')+'</row>'}).join('');
+  const W=v.h.length,cols=v.h.map((h,i)=>`<col min="${i+1}" max="${i+1}" width="${i==0?26:16}" customWidth="1"/>`).join('');
+  const sheet=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"><pane xSplit="1" ySplit="4" topLeftCell="B5" activePane="bottomRight" state="frozen"/></sheetView></sheetViews><cols>${cols}</cols><sheetData>${rows}</sheetData><mergeCells count="2"><mergeCell ref="A1:${col(W-1)}1"/><mergeCell ref="A2:${col(W-1)}2"/></mergeCells></worksheet>`;
+  const styles=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><numFmts count="1"><numFmt numFmtId="164" formatCode="#,##0.00"/></numFmts><fonts count="3"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><color rgb="FFFFFFFF"/><name val="Calibri"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFE8890C"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="7"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="164" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1"/><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/><xf numFmtId="164" fontId="1" fillId="0" borderId="0" xfId="0" applyNumberFormat="1" applyFont="1"/><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1" applyAlignment="1"><alignment wrapText="1" vertical="center" horizontal="center"/></xf><xf numFmtId="0" fontId="2" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment wrapText="1" vertical="center" horizontal="center"/></xf><xf numFmtId="164" fontId="1" fillId="0" borderId="0" xfId="0" applyNumberFormat="1" applyFont="1"/></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`;
+  return zip([['[Content_Types].xml','<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>'],
+   ['_rels/.rels','<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>'],
+   ['xl/workbook.xml',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="${esc(v.sh.slice(0,30))}" sheetId="1" r:id="rId1"/></sheets></workbook>`],
+   ['xl/_rels/workbook.xml.rels','<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>'],
+   ['xl/worksheets/sheet1.xml',sheet],['xl/styles.xml',styles]])}
+ const r2=v=>Math.round(v*100)/100;
+ function veri12(gi){const g=D.gruplar[gi],K=K12;
+  const h=['Ad Soyad','Hisse Oranı %','Pelit Alncak M2','Alp. A. Baş Alncak M2','Top. Alncak M2'].concat(K.map((k,i)=>(i+1)+'. Ödeme'+(k.p?' (İSTENEN)':'')+' - '+k.k+' - '+k.t),['TOPLAM ÖDENEN']);
+  const R=g.uyeler.map(u=>[u.ad,r2(u.yuzde),r2(u.m1376),r2(u.m982),r2(u.m2)].concat(u.odemeler.map(r2),[r2(u.odenen)]));
+  R.push(['GRUP TOPLAMI',r2(g.yuzde),r2(g.m1376),r2(g.m982),r2(g.m2)].concat(K.map(k=>r2(k.v*g.yuzde/100)),[r2(g.odenen)]));
+  R.push(['10 GRUP GEN. TOP.',100,1376,982.33,2358.33].concat(K.map(k=>r2(k.v)),[r2(top1)]));
+  return {ad:'Aydinevler-'+g.ad.split(' –')[0].replace(/\.| /g,'')+'-'+new Date().toISOString().slice(0,10),sh:g.ad.split(' –')[0].replace('.',''),baslik:'Aydınevler 1. ve 2. Şufa – '+g.ad,alt:'Çıktı tarihi: '+new Date().toLocaleDateString('tr-TR')+(g.istenen?' · Yeni istenen: '+g.istenen.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2})+' TL (toplam ödenene dahil değildir)':''),h,R,n:2}}
+ function veri3(){const K=K3x;
+  const h=['Ad Soyad','Hisse Oranı %','Alncak M2'].concat(K.map((k,i)=>(i+1)+'. Ödeme'+(k.p?' (İSTENEN)':'')+' - '+k.k+' - '+k.t),['TOPLAM ÖDENEN']);
+  const R=D.sufa3.map((n,i)=>[(i+1)+'. '+n,3.33,r2(S3M)].concat(K.map(k=>r2(k.v/30)),[r2(S3)]));
+  R.push(['30 KİŞİ GEN. TOP.',100,306.73].concat(K.map(k=>r2(k.v)),[r2(top3)]));
+  return {ad:'Aydinevler-3Sufa-'+new Date().toISOString().slice(0,10),sh:'3. Sufa',baslik:'Aydınevler 3. Şufa – Hasan Çelik / Pelit İnşaat',alt:'Çıktı tarihi: '+new Date().toLocaleDateString('tr-TR'),h,R,n:1}}
+ async function excel(v,M){M.textContent='Excel hazırlanıyor…';const data=xlsx(v);
+  let dl=null;try{dl=window.claude&&await Promise.race([claude.use('downloads'),new Promise(r=>setTimeout(()=>r(null),4000))])}catch(e){}
+  if(!dl){M.textContent='Bu görünümde dosya indirilemiyor. Sayfayı tarayıcıda açıp tekrar deneyin.';return}
+  try{await dl.save({filename:v.ad+'.xlsx',data});M.textContent='Kaydedildi. WhatsApp grubunuza gönderebilirsiniz.'}catch(e){M.textContent=e&&e.code=='declined'?'İndirme iptal edildi.':'Excel indirilemedi.'}}
+ document.getElementById('gcX').onclick=()=>excel(veri12(+document.getElementById('gcS').value),document.getElementById('gcM'));
+ document.getElementById('gc3X').onclick=()=>excel(veri3(),document.getElementById('gc3M'));
+ window._xlTest=()=>[Array.from(xlsx(veri12(1))),Array.from(xlsx(veri3()))];
+})();
+
+(function(){const M=window.__MS;const DK2={"12":["1. ve 2. Şufa","#1f6fb2"],"3":["3. Şufa","#2e8b57"],"iz":["İzale-i Şuyu","#a0522d"]};
+ const tk2=t=>t.split('.').reverse().join('');
+ const top=k=>M.filter(m=>!k||m[0]==k).reduce((a,m)=>a+m[3],0);
+ document.getElementById('msT').innerHTML=[['Toplam',tl(top(''))],['1. ve 2. Şufa',tl(top('12'))],['3. Şufa',tl(top('3'))],['İzale-i Şuyu',tl(top('iz'))]].map(x=>`<div><small>${x[0]}</small><b>${x[1]}</b></div>`).join('');
+ window._MS=M;
+ function ciz(k){const L=M.filter(m=>!k||m[0]==k).sort((a,b)=>tk2(b[1]).localeCompare(tk2(a[1])));
+  document.getElementById('msL').innerHTML=L.map(m=>{const d=DK2[m[0]],im=m[4]||[];window._msi=window._msi||[];
+   return `<div class="mc" style="--c:${d[1]}"><div class="mch"><div><b>${m[2]}</b><div class="mcs"><span>${d[0]}</span> · ${trt(m[1])}</div></div><span class="n">${tl(m[3])}</span></div>`+
+   (im.length?`<div class="mci">${im.map(x=>`<img src="${x}" onclick="lb(this.src)">`).join('')}</div>`:'<div class="mcy">Belge henüz eklenmedi</div>')+'</div>'}).join('')+`<div class="mgt"><div><b>${k?DK2[k][0]+' toplamı':'GENEL TOPLAM'}</b><small>${L.length} masraf</small></div><b class="n">${tl(L.reduce((a,m)=>a+m[3],0))}</b></div>`}
+ document.querySelectorAll('#msf button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#msf button').forEach(x=>x.classList.remove('on'));b.classList.add('on');ciz(b.dataset.k)});ciz('');
+})();
+</script>
+<script>window.FIREBASE_CONFIG={apiKey:"AIzaSyCAoiS2OXhtwmYOnupZyT9gAJd0sSO0GBQ",authDomain:"aydinevler-95bb2.firebaseapp.com",projectId:"aydinevler-95bb2",storageBucket:"aydinevler-95bb2.firebasestorage.app",messagingSenderId:"961973220905",appId:"1:961973220905:web:ce345481002381af668e38"};</script>
+<script type="module">import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+import {getAuth,RecaptchaVerifier,signInWithPhoneNumber,onAuthStateChanged,signOut} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+import {getFirestore,doc,getDoc,getDocs,setDoc,deleteDoc,updateDoc,collection,arrayUnion} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+
+const app=initializeApp(window.FIREBASE_CONFIG);
+const auth=getAuth(app);auth.languageCode='tr';
+const db=getFirestore(app);
+const $=id=>document.getElementById(id);
+const G=$('giris'),msg=t=>{$('gM').textContent=t};
+
+function telNorm(x){let d=String(x||'').replace(/\D/g,'');if(d.startsWith('0'))d=d.slice(1);if(d.length==10&&d[0]=='5')return '+90'+d;if(d.length==12&&d.startsWith('90'))return '+'+d;return null}
+let conf=null,rv=null;
+function rec(){if(!rv)rv=new RecaptchaVerifier(auth,'gB',{size:'invisible'});return rv}
+$('gB').onclick=async()=>{const t=telNorm($('gT').value);if(!t){msg('Numarayı 05xx xxx xx xx şeklinde yazın.');return}
+ msg('SMS gönderiliyor…');$('gB').disabled=true;
+ try{conf=await signInWithPhoneNumber(auth,t,rec());$('g1').style.display='none';$('g2').style.display='';msg(t+' numarasına gelen 6 haneli kodu yazın.');$('gK').focus()}
+ catch(e){msg('SMS gönderilemedi. Biraz sonra tekrar deneyin. ('+(e.code||'')+')');try{rv.clear()}catch(_){}rv=null}
+ $('gB').disabled=false};
+$('gO').onclick=async()=>{const k=$('gK').value.replace(/\D/g,'');if(k.length!=6){msg('Kod 6 haneli olmalı.');return}
+ msg('Kontrol ediliyor…');try{await conf.confirm(k)}catch(e){msg('Kod hatalı ya da süresi geçmiş.')}};
+$('gG').onclick=()=>{$('g2').style.display='none';$('g1').style.display='';msg('')};
+window.__cikis=()=>signOut(auth).then(()=>location.reload());
+
+async function hepsi(c){const s=await getDocs(collection(db,c));return s.docs.map(d=>({id:d.id,...d.data()}))}
+
+onAuthStateChanged(auth,async u=>{
+ if(!u){G.style.display='';$('yuk').style.display='none';return}
+ G.style.display='none';$('yuk').style.display='';
+ try{
+  const me=await getDoc(doc(db,'uyeler',u.phoneNumber));
+  if(!me.exists()){G.style.display='';$('yuk').style.display='none';$('g2').style.display='none';$('g1').style.display='';msg('Bu numara kayıtlı değil. Grup sorumlunuza başvurun.');await signOut(auth);return}
+  const ben=me.data();window.__BEN=ben;window.__ADMIN=!!ben.admin;
+  const oz=await getDoc(doc(db,'ozet','genel'));
+  if(!oz.exists()){$('yuk').innerHTML=ben.admin?'<div class="w"><h1>İlk kurulum</h1><p>Claude\'un gönderdiği <b>seed.json</b> dosyasını seçin.</p><input type="file" id="sF" accept=".json"><div id="sM" class="hint"></div></div>':'<div class="w"><p>Sistem henüz hazırlanıyor. Daha sonra tekrar deneyin.</p></div>';if(ben.admin)$('sF').onchange=e=>yukle(e.target.files[0],$('sM'));return}
+  const O=oz.data();
+  const gn=ben.admin?[1,2,3,4,5,6,7,8,9,10]:(ben.gruplar||[]);
+  const gd={};(await Promise.all(gn.map(n=>getDoc(doc(db,'gruplar',String(n)))))).forEach(d=>{if(d.exists())gd[d.id]=d.data()});
+  window.__D={gruplar:O.gruplar.map((g,i)=>({...g,uyeler:(gd[String(i+1)]||{}).uyeler||[]})),sufa3:O.sufa3};
+  window.__K12=O.k12;window.__K3=O.k3;window.__O=O;
+  const du=await hepsi('duyurular'),ms=await hepsi('masraflar');
+  window.__DU=du.map(d=>[d.dava,d.tarih,d.baslik,d.metin,d.gorseller||[]]);
+  window.__MS=ms.map(m=>[m.dava,m.tarih,m.aciklama,m.tutar,m.gorseller||[],m.id]);window.__MSD=ms;
+  window.__kaydetK=async E=>{await updateDoc(doc(db,'ozet','genel'),{k12:E.k12,k3:E.k3});location.reload()};
+  $('yuk').style.display='none';$('app').style.display='';
+  const s=document.createElement('script');s.textContent=$('appjs').textContent;document.body.appendChild(s);
+  sonra();
+ }catch(e){console.error(e);$('yuk').innerHTML='<div class="w"><p>Bilgiler yüklenemedi. İnternet bağlantınızı kontrol edip sayfayı yenileyin.</p><button onclick="__cikis()">Çıkış yap</button></div>'}
+});
+
+async function yukle(f,M){if(!f)return;M.textContent='Yükleniyor…';
+ try{const S=JSON.parse(await f.text());
+  await setDoc(doc(db,'ozet','genel'),S.ozet);
+  for(const g of S.gruplar)await setDoc(doc(db,'gruplar',String(g.n)),{ad:g.ad,yuzde:g.yuzde,m1376:g.m1376,m982:g.m982,m2:g.m2,uyeler:g.uyeler});
+  for(const d of S.duyurular){const {id,...r}=d;await setDoc(doc(db,'duyurular',id),r)}
+  for(const m of S.masraflar){const {id,...r}=m;await setDoc(doc(db,'masraflar',id),r)}
+  M.textContent='Tamamlandı. Sayfa yenileniyor…';setTimeout(()=>location.reload(),800)}
+ catch(e){console.error(e);M.textContent='Hata: '+(e.message||e)}}
+
+function kucult(file,max=1400,q=0.75){return new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height));const c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);ok(c.toDataURL('image/jpeg',q))};im.onerror=no;im.src=r.result};r.onerror=no;r.readAsDataURL(file)})}
+async function gorseller(files){const a=[];for(const f of files)a.push(await kucult(f));return a}
+const boyut=o=>new Blob([JSON.stringify(o)]).size;
+
+function sonra(){
+ const B=window.__BEN;
+ // üst bilgi + çıkış
+ const b=document.createElement('div');b.className='ust';b.innerHTML=`<span>Giriş: <b>${(B.adlar||[]).join(', ')}</b></span><button onclick="__cikis()">Çıkış</button>`;
+ document.getElementById('nav').after(b);
+ // kendi adını otomatik sorgula
+ const q=document.getElementById('q');if(q&&B.adlar&&B.adlar[0]){q.value=B.adlar[0];q.oninput({target:q})}
+ // yönetici
+ const yB=document.getElementById('yB');
+ if(!window.__ADMIN){yB.parentNode.style.display='none';return}
+ yB.textContent='Yönetici ekranı';yB.style.color='#22314d';yB.onclick=()=>{document.querySelectorAll('#nav button,section').forEach(e=>e.classList.remove('on'));document.getElementById('ad').classList.add('on');window.scrollTo(0,0)};
+ ['eC','eR'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});
+ const A=document.querySelector('#ad .w');
+ const box=document.createElement('div');box.innerHTML=`
+ <h2>Telefon numaraları</h2><div class="sub" style="margin:0 0 8px">Her kişinin SMS ile gireceği numarayı yazın (05xx…). Aynı numarayı birden fazla kişiye yazarsanız o telefon bu kişilerin hepsini görür.</div>
+ <input type="search" id="tA" placeholder="İsim ara" style="padding:10px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:10px;margin-bottom:8px">
+ <div id="tL"></div><div class="ab"><button id="tK">Numaraları kaydet</button></div><div id="tM" class="hint"></div>
+ <h2>Yeni duyuru</h2><div class="af">
+ <label>Dava<select id="nD"><option value="12">1. ve 2. Şufa</option><option value="3">3. Şufa</option><option value="iz">İzale-i Şuyu</option></select></label>
+ <label>Tarih<input id="nT" placeholder="gg.aa.yyyy"></label><label>Başlık<input id="nB"></label>
+ <label>Metin (*kalın* için yıldız kullanın)<textarea id="nX" style="width:100%;height:140px;padding:10px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:10px"></textarea></label>
+ <label>Görseller (isteğe bağlı)<input type="file" id="nF" accept="image/*" multiple></label></div>
+ <div class="ab"><button id="nK">Duyuruyu yayınla</button></div><div id="nM" class="hint"></div>
+ <h2>Masraf belgesi / yeni masraf</h2><div class="af">
+ <label>Masraf<select id="mS"><option value="">+ Yeni masraf ekle</option></select></label>
+ <div id="mY" class="af"><label>Dava<select id="mD"><option value="12">1. ve 2. Şufa</option><option value="3">3. Şufa</option><option value="iz">İzale-i Şuyu</option></select></label><label>Tarih<input id="mT" placeholder="gg.aa.yyyy"></label><label>Açıklama<input id="mA"></label><label>Tutar (TL)<input id="mV" inputmode="decimal"></label></div>
+ <label>Belge görselleri<input type="file" id="mF" accept="image/*" multiple></label></div>
+ <div class="hint" style="font-size:12.5px">Dekontta TC kimlik no, hesap no veya adres görünüyorsa yüklemeden önce kırpın ya da kapatın.</div>
+ <div class="ab"><button id="mK">Kaydet</button></div><div id="mM" class="hint"></div>
+ <h2>Verileri yeniden yükle</h2><div class="hint">Yalnızca Claude yeni bir seed.json verdiğinde kullanın; mevcut verilerin üzerine yazar.</div><input type="file" id="sF2" accept=".json"><div id="sM2" class="hint"></div>`;
+ A.appendChild(box);
+ document.getElementById('sF2').onchange=e=>{if(confirmYaz())yukle(e.target.files[0],document.getElementById('sM2'))};
+ function confirmYaz(){return true}
+ // kişiler
+ const K={};const ek=(kisi,ad,g,s3)=>{K[kisi]=K[kisi]||{kisi,ad,gruplar:[],s3:false};if(g&&!K[kisi].gruplar.includes(g))K[kisi].gruplar.push(g);if(s3)K[kisi].s3=true};
+ window.__D.gruplar.forEach((g,i)=>g.uyeler.forEach(u=>ek(u.kisi,u.ad,i+1,false)));
+ (window.__O.sufa3k||[]).forEach((k,i)=>ek(k,window.__O.sufa3[i],0,true));
+ const L=Object.values(K).sort((a,b)=>a.ad.localeCompare(b.ad,'tr'));
+ let U=[];const tel={};
+ hepsi('uyeler').then(us=>{U=us;us.forEach(u=>(u.kisiler||[]).forEach(k=>tel[k]=u.id));ciz('')});
+ const goster=t=>t?('0'+t.slice(3)).replace(/(\d{4})(\d{3})(\d{2})(\d{2})/,'$1 $2 $3 $4'):'';
+ function ciz(f){f=f.toLocaleLowerCase('tr-TR');document.getElementById('tL').innerHTML=L.filter(p=>!f||p.ad.toLocaleLowerCase('tr-TR').includes(f)).map(p=>`<div class="er" style="display:flex;gap:8px;align-items:center;padding:8px 10px"><div style="flex:1;min-width:0"><b style="font-size:14px">${p.ad}</b><div style="font-size:12px;color:#777">${p.gruplar.map(g=>g+'. Grup').join(', ')}${p.s3?(p.gruplar.length?' · ':'')+'3. Şufa':''}</div></div><input data-k="${p.kisi}" class="tI" inputmode="tel" placeholder="05xx xxx xx xx" value="${goster(tel[p.kisi]||'')}" style="width:150px;padding:9px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:8px"></div>`).join('');
+  document.querySelectorAll('.tI').forEach(i=>i.oninput=e=>{tel[i.dataset.k]=e.target.value})}
+ document.getElementById('tA').oninput=e=>ciz(e.target.value);
+ document.getElementById('tK').onclick=async()=>{const M=document.getElementById('tM');const yeni={};const hata=[];
+  L.forEach(p=>{const v=tel[p.kisi];if(!v)return;const t=v.startsWith('+')&&v.length==13?v:telNorm(v);if(!t){hata.push(p.ad);return}
+   yeni[t]=yeni[t]||{kisiler:[],adlar:[],gruplar:[],s3:false};const y=yeni[t];y.kisiler.push(p.kisi);y.adlar.push(p.ad);p.gruplar.forEach(g=>{if(!y.gruplar.includes(g))y.gruplar.push(g)});if(p.s3)y.s3=true});
+  if(hata.length){M.textContent='Hatalı numara: '+hata.join(', ');return}
+  M.textContent='Kaydediliyor…';
+  try{const eski={};U.forEach(u=>eski[u.id]=u);
+   for(const t in yeni)await setDoc(doc(db,'uyeler',t),{...yeni[t],admin:!!(eski[t]&&eski[t].admin)});
+   for(const t in eski)if(!yeni[t]&&!eski[t].admin)await deleteDoc(doc(db,'uyeler',t));
+   M.textContent='Kaydedildi: '+Object.keys(yeni).length+' telefon.';U=await hepsi('uyeler')}catch(e){M.textContent='Hata: '+(e.message||e)}};
+ // duyuru
+ document.getElementById('nK').onclick=async()=>{const M=document.getElementById('nM');const r={dava:nD.value,tarih:nT.value.trim(),baslik:nB.value.trim(),metin:nX.value.trim(),gorseller:[]};
+  if(!/^\d{2}\.\d{2}\.\d{4}$/.test(r.tarih)||!r.baslik){M.textContent='Tarih (gg.aa.yyyy) ve başlık gerekli.';return}
+  M.textContent='Hazırlanıyor…';try{r.gorseller=await gorseller(nF.files);if(boyut(r)>950000){M.textContent='Görseller çok büyük; daha az görsel seçin.';return}
+   await setDoc(doc(db,'duyurular','d'+Date.now()),r);M.textContent='Yayınlandı. Sayfa yenileniyor…';setTimeout(()=>location.reload(),700)}catch(e){M.textContent='Hata: '+(e.message||e)}};
+ // masraf
+ const MS=window.__MSD;const mS=document.getElementById('mS');
+ MS.slice().sort((a,b)=>a.tarih.split('.').reverse().join('').localeCompare(b.tarih.split('.').reverse().join(''))).forEach(m=>{const o=document.createElement('option');o.value=m.id;o.textContent=m.tarih+' · '+m.aciklama;mS.appendChild(o)});
+ mS.onchange=()=>{document.getElementById('mY').style.display=mS.value?'none':''};
+ const pn=x=>{x=String(x).trim();if(x.includes(','))x=x.replace(/\./g,'').replace(',','.');else if(/^\d{1,3}(\.\d{3})+$/.test(x))x=x.replace(/\./g,'');return parseFloat(x)||0};
+ document.getElementById('mK').onclick=async()=>{const M=document.getElementById('mM');M.textContent='Hazırlanıyor…';
+  try{const g=await gorseller(mF.files);
+   if(mS.value){const m=MS.find(x=>x.id==mS.value);if(!g.length){M.textContent='Görsel seçin.';return}if(boyut({...m,gorseller:(m.gorseller||[]).concat(g)})>950000){M.textContent='Bu masrafa daha fazla görsel sığmıyor.';return}
+    await updateDoc(doc(db,'masraflar',m.id),{gorseller:arrayUnion(...g)})}
+   else{const r={dava:mD.value,tarih:mT.value.trim(),aciklama:mA.value.trim(),tutar:pn(mV.value),gorseller:g};if(!/^\d{2}\.\d{2}\.\d{4}$/.test(r.tarih)||!r.aciklama||!r.tutar){M.textContent='Tarih, açıklama ve tutar gerekli.';return}
+    if(boyut(r)>950000){M.textContent='Görseller çok büyük.';return}await setDoc(doc(db,'masraflar','m'+Date.now()),r)}
+   M.textContent='Kaydedildi. Sayfa yenileniyor…';setTimeout(()=>location.reload(),700)}catch(e){M.textContent='Hata: '+(e.message||e)}};
+}
+</script></body></html>
