@@ -573,11 +573,15 @@ function sonra(){
  // kendi adını otomatik sorgula
  const q=document.getElementById('q');if(q&&B.adlar&&B.adlar[0]){q.value=B.adlar[0];q.oninput({target:q});
   const gs=(B.gruplar||[]).slice().sort((a,b)=>a-b);const G=window.__D.gruplar;
-  if(gs.length||(B.adlar||[]).length>1){const d=document.createElement('div');d.style.cssText='margin:10px 0 0';
-   const chip=(a,on)=>`<button data-a="${a}" style="padding:7px 12px;margin:0 6px 6px 0;border-radius:20px;border:1.5px solid #1e5b4f;background:${on?'#1e5b4f':'#fff'};color:${on?'#fff':'#1e5b4f'};font-weight:700;font-size:13px">${a}</button>`;
-   d.innerHTML=gs.map(n=>{const g=G[n-1];if(!g||!g.uyeler.length)return '';const ad=[...new Set(g.uyeler.map(u=>u.ad))];return `<div style="font-size:12px;color:#777;margin:4px 0">${g.ad.split(' –')[0]}</div>`+ad.map(a=>chip(a,a===B.adlar[0])).join('')}).join('');
+  if(gs.length||(B.adlar||[]).length>1){const d=document.createElement('div');d.style.cssText='display:none;position:absolute;left:0;right:0;top:100%;margin-top:4px;z-index:20;background:#fff;border:1.5px solid #1e5b4f;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);max-height:320px;overflow:auto;padding:4px 0';
+   const chip=(a,on)=>`<button data-a="${a}" style="display:block;width:100%;text-align:left;padding:11px 16px;border:0;background:${on?'#e7f0ed':'#fff'};color:#1e2a2e;font-weight:${on?'700':'500'};font-size:15px">${a}</button>`;
+   d.innerHTML=gs.map(n=>{const g=G[n-1];if(!g||!g.uyeler.length)return '';const ad=[...new Set(g.uyeler.map(u=>u.ad))];return `<div style="font-size:12px;color:#888;padding:8px 16px 2px;font-weight:700">${g.ad.split(' –')[0]}</div>`+ad.map(a=>chip(a,a===B.adlar[0])).join('')}).join('');
    {const var_=new Set(gs.flatMap(n=>(G[n-1]?G[n-1].uyeler:[]).map(u=>u.ad)));const ek=(B.adlar||[]).filter(x=>!var_.has(x));if(ek.length)d.innerHTML+=`<div style="font-size:12px;color:#777;margin:4px 0">Bu telefona bağlı</div>`+ek.map(a=>chip(a,a===B.adlar[0])).join('')}
-   q.after(d);d.querySelectorAll('button').forEach(b=>b.onclick=()=>{q.value=b.dataset.a;q.oninput({target:q});d.querySelectorAll('button').forEach(x=>{const on=x.dataset.a===b.dataset.a;x.style.background=on?'#1e5b4f':'#fff';x.style.color=on?'#fff':'#1e5b4f'})})}}
+   const w=document.createElement('div');w.style.position='relative';q.parentNode.insertBefore(w,q);w.appendChild(q);w.appendChild(d);
+   q.addEventListener('focus',()=>{d.style.display='block';q.select()});
+   document.addEventListener('click',e=>{if(!w.contains(e.target))d.style.display='none'});
+   q.addEventListener('input',()=>{d.style.display='none'});
+   d.querySelectorAll('button').forEach(b=>b.onclick=()=>{q.value=b.dataset.a;q.oninput({target:q});d.style.display='none';q.blur();d.querySelectorAll('button').forEach(x=>{const on=x.dataset.a===b.dataset.a;x.style.background=on?'#e7f0ed':'#fff';x.style.fontWeight=on?'700':'500'})})}}
  // yönetici
  const yB=document.getElementById('yB');
  if(!window.__ADMIN){yB.parentNode.style.display='none';return}
