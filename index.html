@@ -568,13 +568,16 @@ const boyut=o=>new Blob([JSON.stringify(o)]).size;
 function sonra(){
  const B=window.__BEN;
  // üst bilgi + çıkış
- const b=document.createElement('div');b.className='ust';b.innerHTML=`<span>Giriş: <b>${(B.adlar||[]).join(', ')}</b></span><button onclick="__cikis()">Çıkış</button>`;
+ const b=document.createElement('div');b.className='ust';b.innerHTML=`<span></span><button onclick="__cikis()">Çıkış</button>`;
  document.getElementById('nav').after(b);
  // kendi adını otomatik sorgula
  const q=document.getElementById('q');if(q&&B.adlar&&B.adlar[0]){q.value=B.adlar[0];q.oninput({target:q});
-  if(B.adlar.length>1){const d=document.createElement('div');d.style.cssText='display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 0';
-   d.innerHTML=B.adlar.map((a,i)=>`<button data-a="${a}" style="padding:8px 14px;border-radius:20px;border:1.5px solid #1e5b4f;background:${i?'#fff':'#1e5b4f'};color:${i?'#1e5b4f':'#fff'};font-weight:700;font-size:14px">${a}</button>`).join('');
-   q.after(d);d.querySelectorAll('button').forEach(b=>b.onclick=()=>{q.value=b.dataset.a;q.oninput({target:q});d.querySelectorAll('button').forEach(x=>{const on=x===b;x.style.background=on?'#1e5b4f':'#fff';x.style.color=on?'#fff':'#1e5b4f'})})}}
+  const gs=(B.gruplar||[]).slice().sort((a,b)=>a-b);const G=window.__D.gruplar;
+  if(gs.length||(B.adlar||[]).length>1){const d=document.createElement('div');d.style.cssText='margin:10px 0 0';
+   const chip=(a,on)=>`<button data-a="${a}" style="padding:7px 12px;margin:0 6px 6px 0;border-radius:20px;border:1.5px solid #1e5b4f;background:${on?'#1e5b4f':'#fff'};color:${on?'#fff':'#1e5b4f'};font-weight:700;font-size:13px">${a}</button>`;
+   d.innerHTML=gs.map(n=>{const g=G[n-1];if(!g||!g.uyeler.length)return '';const ad=[...new Set(g.uyeler.map(u=>u.ad))];return `<div style="font-size:12px;color:#777;margin:4px 0">${g.ad.split(' –')[0]}</div>`+ad.map(a=>chip(a,a===B.adlar[0])).join('')}).join('');
+   {const var_=new Set(gs.flatMap(n=>(G[n-1]?G[n-1].uyeler:[]).map(u=>u.ad)));const ek=(B.adlar||[]).filter(x=>!var_.has(x));if(ek.length)d.innerHTML+=`<div style="font-size:12px;color:#777;margin:4px 0">Bu telefona bağlı</div>`+ek.map(a=>chip(a,a===B.adlar[0])).join('')}
+   q.after(d);d.querySelectorAll('button').forEach(b=>b.onclick=()=>{q.value=b.dataset.a;q.oninput({target:q});d.querySelectorAll('button').forEach(x=>{const on=x.dataset.a===b.dataset.a;x.style.background=on?'#1e5b4f':'#fff';x.style.color=on?'#fff':'#1e5b4f'})})}}
  // yönetici
  const yB=document.getElementById('yB');
  if(!window.__ADMIN){yB.parentNode.style.display='none';return}
