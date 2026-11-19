@@ -538,7 +538,7 @@ onAuthStateChanged(auth,async u=>{
   const oz=await getDoc(doc(db,'ozet','genel'));
   if(!oz.exists()){$('yuk').innerHTML=ben.admin?'<div class="w"><h1>İlk kurulum</h1><p>Claude\'un gönderdiği <b>seed.json</b> dosyasını seçin.</p><input type="file" id="sF" accept=".json"><div id="sM" class="hint"></div></div>':'<div class="w"><p>Sistem henüz hazırlanıyor. Daha sonra tekrar deneyin.</p></div>';if(ben.admin)$('sF').onchange=e=>yukle(e.target.files[0],$('sM'));return}
   const O=oz.data();
-  const gn=ben.admin?[1,2,3,4,5,6,7,8,9,10]:(ben.gruplar||[]);
+  const gn=(ben.admin||ben.hepsi)?[1,2,3,4,5,6,7,8,9,10]:(ben.gruplar||[]);
   const gd={};(await Promise.all(gn.map(n=>getDoc(doc(db,'gruplar',String(n)))))).forEach(d=>{if(d.exists())gd[d.id]=d.data()});
   window.__D={gruplar:O.gruplar.map((g,i)=>({...g,uyeler:(gd[String(i+1)]||{}).uyeler||[]})),sufa3:O.sufa3};
   window.__K12=O.k12;window.__K3=O.k3;window.__O=O;
@@ -582,6 +582,7 @@ function sonra(){
  <h2>Telefon numaraları</h2><div class="sub" style="margin:0 0 8px">Her kişinin SMS ile gireceği numarayı yazın (05xx…). Bir kişiye birden fazla numara için aralarına virgül koyun. Aynı numarayı birden fazla kişiye yazarsanız o telefon bu kişilerin hepsini görür.</div>
  <input type="search" id="tA" placeholder="İsim ara" style="padding:10px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:10px;margin-bottom:8px">
  <div id="tL"></div><div class="ab"><button id="tK">Numaraları kaydet</button></div><div id="tM" class="hint"></div>
+ <h2>Yetkiler</h2><div class="sub" style="margin:0 0 8px"><b>Tüm gruplar</b>: bütün grupların kişi bilgilerini görür, değiştiremez. <b>Yönetici</b>: her şeyi görür ve değiştirir (numaralar, ödemeler, duyurular).</div><div id="yL"></div><div id="yM" class="hint"></div>
  <h2>Yeni duyuru</h2><div class="af">
  <label>Dava<select id="nD"><option value="12">1. ve 2. Şufa</option><option value="3">3. Şufa</option><option value="iz">İzale-i Şuyu</option></select></label>
  <label>Tarih<input id="nT" placeholder="gg.aa.yyyy"></label><label>Başlık<input id="nB"></label>
@@ -605,7 +606,7 @@ function sonra(){
  const L=Object.values(K).sort((a,b)=>a.ad.localeCompare(b.ad,'tr'));
  let U=[];const tel={};
  const goster=t=>t?('0'+t.slice(3)).replace(/(\d{4})(\d{3})(\d{2})(\d{2})/,'$1 $2 $3 $4'):'';
- hepsi('uyeler').then(us=>{U=us;us.forEach(u=>(u.kisiler||[]).forEach(k=>tel[k]=(tel[k]?tel[k]+', ':'')+goster(u.id)));ciz('')});
+ hepsi('uyeler').then(us=>{U=us;us.forEach(u=>(u.kisiler||[]).forEach(k=>tel[k]=(tel[k]?tel[k]+', ':'')+goster(u.id)));ciz('');yetki()});
  function ciz(f){f=f.toLocaleLowerCase('tr-TR');document.getElementById('tL').innerHTML=L.filter(p=>!f||p.ad.toLocaleLowerCase('tr-TR').includes(f)).map(p=>`<div class="er" style="display:flex;gap:8px;align-items:center;padding:8px 10px"><div style="flex:1;min-width:0"><b style="font-size:14px">${p.ad}</b><div style="font-size:12px;color:#777">${p.gruplar.map(g=>g+'. Grup').join(', ')}${p.s3?(p.gruplar.length?' · ':'')+'3. Şufa':''}</div></div><input data-k="${p.kisi}" class="tI" inputmode="tel" placeholder="05xx…, 05xx…" value="${tel[p.kisi]||''}" style="width:190px;padding:9px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:8px"></div>`).join('');
   document.querySelectorAll('.tI').forEach(i=>i.oninput=e=>{tel[i.dataset.k]=e.target.value})}
  document.getElementById('tA').oninput=e=>ciz(e.target.value);
@@ -615,9 +616,11 @@ function sonra(){
   if(hata.length){M.textContent='Hatalı numara: '+hata.join(', ');return}
   M.textContent='Kaydediliyor…';
   try{const eski={};U.forEach(u=>eski[u.id]=u);
-   for(const t in yeni)await setDoc(doc(db,'uyeler',t),{...yeni[t],admin:!!(eski[t]&&eski[t].admin)});
+   for(const t in yeni)await setDoc(doc(db,'uyeler',t),{...yeni[t],admin:!!(eski[t]&&eski[t].admin),hepsi:!!(eski[t]&&eski[t].hepsi)});
    for(const t in eski)if(!yeni[t]&&!eski[t].admin)await deleteDoc(doc(db,'uyeler',t));
-   M.textContent='Kaydedildi: '+Object.keys(yeni).length+' telefon.';U=await hepsi('uyeler')}catch(e){M.textContent='Hata: '+(e.message||e)}};
+   M.textContent='Kaydedildi: '+Object.keys(yeni).length+' telefon.';U=await hepsi('uyeler');yetki()}catch(e){M.textContent='Hata: '+(e.message||e)}};
+ function yetki(){const ben=auth.currentUser.phoneNumber;document.getElementById('yL').innerHTML=U.slice().sort((a,b)=>(a.adlar||[''])[0].localeCompare((b.adlar||[''])[0],'tr')).map(u=>`<div class="er" style="display:flex;gap:8px;align-items:center;padding:8px 10px"><div style="flex:1;min-width:0"><b style="font-size:14px">${(u.adlar||[]).join(', ')||'—'}</b><div style="font-size:12px;color:#777">${goster(u.id)}</div></div><label style="font-size:12.5px;display:flex;gap:4px;align-items:center"><input type="checkbox" data-t="${u.id}" data-f="hepsi" ${u.hepsi||u.admin?'checked':''} ${u.admin?'disabled':''}>Tüm gruplar</label><label style="font-size:12.5px;display:flex;gap:4px;align-items:center"><input type="checkbox" data-t="${u.id}" data-f="admin" ${u.admin?'checked':''} ${u.id==ben?'disabled':''}>Yönetici</label></div>`).join('')||'<div class="hint">Önce numara kaydedin.</div>';
+  document.querySelectorAll('#yL input').forEach(c=>c.onchange=async()=>{const M=document.getElementById('yM');M.textContent='Kaydediliyor…';try{await updateDoc(doc(db,'uyeler',c.dataset.t),{[c.dataset.f]:c.checked});const u=U.find(x=>x.id==c.dataset.t);u[c.dataset.f]=c.checked;M.textContent='Kaydedildi.';yetki()}catch(e){M.textContent='Hata: '+(e.message||e)}})}
  // duyuru
  document.getElementById('nK').onclick=async()=>{const M=document.getElementById('nM');const r={dava:nD.value,tarih:nT.value.trim(),baslik:nB.value.trim(),metin:nX.value.trim(),gorseller:[]};
   if(!/^\d{2}\.\d{2}\.\d{4}$/.test(r.tarih)||!r.baslik){M.textContent='Tarih (gg.aa.yyyy) ve başlık gerekli.';return}
