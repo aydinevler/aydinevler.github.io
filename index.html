@@ -579,11 +579,15 @@ function sonra(){
  ['eC','eR'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});
  const A=document.querySelector('#ad .w');
  const box=document.createElement('div');box.innerHTML=`
- <h2>Telefon numaraları</h2><div class="sub" style="margin:0 0 8px">Her kişinin SMS ile gireceği numarayı yazın (05xx…). Bir kişiye birden fazla numara için aralarına virgül koyun. Aynı numarayı birden fazla kişiye yazarsanız o telefon bu kişilerin hepsini görür.</div>
+ <h2>Telefon numaraları</h2><div class="sub" style="margin:0 0 8px">Kişiler gruplarının altında. Numarayı 05xx… şeklinde yazın; bir kişiye birden fazla numara için virgül koyun. Birden fazla grupta olan kişi her grubunda görünür, numarası hepsinde ortaktır.</div>
  <input type="search" id="tA" placeholder="İsim ara" style="padding:10px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:10px;margin-bottom:8px">
- <div id="tL"></div><div class="ab"><button id="tK">Numaraları kaydet</button></div><div id="tM" class="hint"></div>
- <h2>Yetkiler</h2><div class="sub" style="margin:0 0 8px"><b>Tüm gruplar</b>: bütün grupların kişi bilgilerini görür, değiştiremez. <b>Yönetici</b>: her şeyi görür ve değiştirir (numaralar, ödemeler, duyurular).</div><div id="yL"></div><div id="yM" class="hint"></div>
- <h2>Listede olmayan kişi ekle</h2><div class="sub" style="margin:0 0 8px">Avukat, aile yakını gibi davada payı olmayan biri için. Bu kişi tüm grupları görür, hiçbir şeyi değiştiremez.</div><div class="af"><label>Ad soyad<input id="xA"></label><label>Telefon<input id="xT" inputmode="tel" placeholder="05xx xxx xx xx"></label></div><div class="ab"><button id="xK">Ekle</button></div><div id="xM" class="hint"></div>
+ <div id="tL"></div><div class="ab" style="position:sticky;bottom:8px"><button id="tK">Numaraları kaydet</button></div><div id="tM" class="hint"></div>
+ <h2>Yeni kişi ekle</h2><div class="sub" style="margin:0 0 8px">Listede olmayan biri için (avukat, aile yakını vb.).</div>
+ <div class="af"><label>Ad soyad<input id="xA"></label><label>Telefon<input id="xT" inputmode="tel" placeholder="05xx xxx xx xx"></label>
+ <label>Yetki<select id="xR"><option value="grup">Seçtiğim gruplar</option><option value="tum">Tüm gruplar (yalnızca görür)</option><option value="yon">Yönetici (her şeyi değiştirir)</option></select></label>
+ <div id="xG" style="display:flex;flex-wrap:wrap;gap:6px"></div></div>
+ <div class="ab"><button id="xK">Ekle</button></div><div id="xM" class="hint"></div>
+ <h2>Kayıtlı telefonlar ve yetkileri</h2><div class="sub" style="margin:0 0 8px"><b>Kendi grubu</b>: yalnızca kendi grubunu görür. <b>Tüm gruplar</b>: bütün grupları görür, değiştiremez. <b>Yönetici</b>: her şeyi görür ve değiştirir.</div><div id="yL"></div><div id="yM" class="hint"></div>
  <h2>Yeni duyuru</h2><div class="af">
  <label>Dava<select id="nD"><option value="12">1. ve 2. Şufa</option><option value="3">3. Şufa</option><option value="iz">İzale-i Şuyu</option></select></label>
  <label>Tarih<input id="nT" placeholder="gg.aa.yyyy"></label><label>Başlık<input id="nB"></label>
@@ -604,28 +608,43 @@ function sonra(){
  const K={};const ek=(kisi,ad,g,s3)=>{K[kisi]=K[kisi]||{kisi,ad,gruplar:[],s3:false};if(g&&!K[kisi].gruplar.includes(g))K[kisi].gruplar.push(g);if(s3)K[kisi].s3=true};
  window.__D.gruplar.forEach((g,i)=>g.uyeler.forEach(u=>ek(u.kisi,u.ad,i+1,false)));
  (window.__O.sufa3k||[]).forEach((k,i)=>ek(k,window.__O.sufa3[i],0,true));
- const L=Object.values(K).sort((a,b)=>a.ad.localeCompare(b.ad,'tr'));
+ const L=Object.values(K);const RN=['#c0392b','#1f6fb2','#2e8b57','#d4801a','#7b4fb0','#c2477f','#138a8a','#8a6d1f','#4b5d73','#a0522d'];
  let U=[];const tel={};
  const goster=t=>t&&!t.startsWith('+90')?t:t?('0'+t.slice(3)).replace(/(\d{4})(\d{3})(\d{2})(\d{2})/,'$1 $2 $3 $4'):'';
+ const ROL=u=>u.admin?'yon':(u.hepsi?'tum':'grup');
  hepsi('uyeler').then(us=>{U=us;us.forEach(u=>(u.kisiler||[]).forEach(k=>tel[k]=(tel[k]?tel[k]+', ':'')+goster(u.id)));ciz('');yetki()});
- function ciz(f){f=f.toLocaleLowerCase('tr-TR');document.getElementById('tL').innerHTML=L.filter(p=>!f||p.ad.toLocaleLowerCase('tr-TR').includes(f)).map(p=>`<div class="er" style="display:flex;gap:8px;align-items:center;padding:8px 10px"><div style="flex:1;min-width:0"><b style="font-size:14px">${p.ad}</b><div style="font-size:12px;color:#777">${p.gruplar.map(g=>g+'. Grup').join(', ')}${p.s3?(p.gruplar.length?' · ':'')+'3. Şufa':''}</div></div><input data-k="${p.kisi}" class="tI" inputmode="tel" placeholder="05xx…, 05xx…" value="${tel[p.kisi]||''}" style="width:190px;padding:9px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:8px"></div>`).join('');
-  document.querySelectorAll('.tI').forEach(i=>i.oninput=e=>{tel[i.dataset.k]=e.target.value})}
+ const satir=(p,c)=>`<div class="er" style="display:flex;gap:8px;align-items:center;padding:7px 10px;border-left:4px solid ${c}"><div style="flex:1;min-width:0"><b style="font-size:14px">${p.ad}</b><div style="font-size:11.5px;color:#888">${p.gruplar.length+(p.s3?1:0)>1?'Hepsi: '+[...p.gruplar.map(g=>g+'. Grup'),...(p.s3?['3. Şufa']:[])].join(', '):''}</div></div><input data-k="${p.kisi}" class="tI" inputmode="tel" placeholder="05xx…" value="${tel[p.kisi]||''}" style="width:180px;padding:8px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:8px"></div>`;
+ function ciz(f){f=f.toLocaleLowerCase('tr-TR');const ok=p=>!f||p.ad.toLocaleLowerCase('tr-TR').includes(f);let h='';
+  window.__D.gruplar.forEach((g,i)=>{const n=i+1,ps=L.filter(p=>p.gruplar.includes(n)&&ok(p)).sort((a,b)=>a.ad.localeCompare(b.ad,'tr'));if(!ps.length)return;
+   const x=U.filter(u=>u.ekstra&&!u.hepsi&&!u.admin&&(u.gruplar||[]).includes(n));
+   h+=`<div style="margin:14px 0 6px;font-weight:700;color:${RN[i]}">${g.ad}</div>`+ps.map(p=>satir(p,RN[i])).join('')+x.map(u=>`<div class="er" style="padding:7px 10px;border-left:4px dashed ${RN[i]};font-size:13px;color:#555">➕ ${(u.adlar||[]).join(', ')} · ${goster(u.id)} <span style="color:#999">(ek kişi)</span></div>`).join('')});
+  const s3=L.filter(p=>p.s3&&ok(p)).sort((a,b)=>a.ad.localeCompare(b.ad,'tr'));
+  if(s3.length)h+=`<div style="margin:14px 0 6px;font-weight:700;color:#2e8b57">3. Şufa – 30 kişi</div>`+s3.map(p=>satir(p,'#2e8b57')).join('');
+  document.getElementById('tL').innerHTML=h||'<div class="hint">Bulunamadı.</div>';
+  document.querySelectorAll('.tI').forEach(i=>{i.oninput=e=>{tel[i.dataset.k]=e.target.value};i.onchange=()=>document.querySelectorAll(`.tI[data-k="${i.dataset.k}"]`).forEach(o=>{if(o!==i)o.value=i.value})})}
  document.getElementById('tA').oninput=e=>ciz(e.target.value);
- document.getElementById('xK').onclick=async()=>{const M=document.getElementById('xM');const ad=document.getElementById('xA').value.trim().toLocaleUpperCase('tr-TR'),t=telNorm(document.getElementById('xT').value);
-  if(!ad||!t){M.textContent='Ad ve geçerli bir numara yazın.';return}if(U.find(u=>u.id==t)){M.textContent='Bu numara zaten kayıtlı; yetkisini aşağıdaki listeden değiştirin.';return}
-  try{await setDoc(doc(db,'uyeler',t),{kisiler:[],adlar:[ad],gruplar:[],s3:false,hepsi:true,admin:false,ekstra:true});U=await hepsi('uyeler');M.textContent='Eklendi. Bu kişi artık SMS ile girip tüm grupları görebilir.';document.getElementById('xA').value='';document.getElementById('xT').value='';yetki()}catch(e){M.textContent='Hata: '+(e.message||e)}};
  document.getElementById('tK').onclick=async()=>{const M=document.getElementById('tM');const yeni={};const hata=[];
   L.forEach(p=>{const v=tel[p.kisi];if(!v||!v.trim())return;v.split(/[,;\/]+/).map(x=>x.trim()).filter(Boolean).forEach(x=>{const t=telNorm(x);if(!t){hata.push(p.ad);return}
    yeni[t]=yeni[t]||{kisiler:[],adlar:[],gruplar:[],s3:false};const y=yeni[t];if(y.kisiler.includes(p.kisi))return;y.kisiler.push(p.kisi);y.adlar.push(p.ad);p.gruplar.forEach(g=>{if(!y.gruplar.includes(g))y.gruplar.push(g)});if(p.s3)y.s3=true})});
-  if(hata.length){M.textContent='Hatalı numara: '+hata.join(', ');return}
+  if(hata.length){M.textContent='Hatalı numara: '+[...new Set(hata)].join(', ');return}
   M.textContent='Kaydediliyor…';
   try{const eski={};U.forEach(u=>eski[u.id]=u);
-   for(const t in yeni)await setDoc(doc(db,'uyeler',t),{...yeni[t],admin:!!(eski[t]&&eski[t].admin),hepsi:!!(eski[t]&&(eski[t].hepsi||eski[t].ekstra))});
+   for(const t in yeni){const e=eski[t]||{};const g=[...new Set([...(yeni[t].gruplar),...(e.ekstra?e.gruplar||[]:[])])];await setDoc(doc(db,'uyeler',t),{...yeni[t],gruplar:g,s3:yeni[t].s3||!!(e.ekstra&&e.s3),admin:!!e.admin,hepsi:!!e.hepsi,ekstra:false})}
    for(const t in eski)if(!yeni[t]&&!eski[t].admin&&!eski[t].ekstra)await deleteDoc(doc(db,'uyeler',t));
    M.textContent='Kaydedildi: '+Object.keys(yeni).length+' telefon.';U=await hepsi('uyeler');yetki()}catch(e){M.textContent='Hata: '+(e.message||e)}};
- function yetki(){const ben=auth.currentUser.phoneNumber;document.getElementById('yL').innerHTML=U.slice().sort((a,b)=>(a.adlar||[''])[0].localeCompare((b.adlar||[''])[0],'tr')).map(u=>`<div class="er" style="display:flex;gap:8px;align-items:center;padding:8px 10px"><div style="flex:1;min-width:0"><b style="font-size:14px">${(u.adlar||[]).join(', ')||'—'}</b><div style="font-size:12px;color:#777">${goster(u.id)}</div></div><label style="font-size:12.5px;display:flex;gap:4px;align-items:center"><input type="checkbox" data-t="${u.id}" data-f="hepsi" ${u.hepsi||u.admin?'checked':''} ${u.admin?'disabled':''}>Tüm gruplar</label><label style="font-size:12.5px;display:flex;gap:4px;align-items:center"><input type="checkbox" data-t="${u.id}" data-f="admin" ${u.admin?'checked':''} ${u.id==ben?'disabled':''}>Yönetici</label>${u.ekstra?`<button data-s="${u.id}" style="border:1px solid #e0b4b4;background:#fff;color:#b42318;border-radius:8px;padding:4px 8px;font-size:12px">Sil</button>`:''}</div>`).join('')||'<div class="hint">Önce numara kaydedin.</div>';
-  document.querySelectorAll('#yL button[data-s]').forEach(b=>b.onclick=async()=>{const M=document.getElementById('yM');try{await deleteDoc(doc(db,'uyeler',b.dataset.s));U=U.filter(x=>x.id!=b.dataset.s);M.textContent='Silindi.';yetki()}catch(e){M.textContent='Hata: '+(e.message||e)}});
-  document.querySelectorAll('#yL input').forEach(c=>c.onchange=async()=>{const M=document.getElementById('yM');M.textContent='Kaydediliyor…';try{await updateDoc(doc(db,'uyeler',c.dataset.t),{[c.dataset.f]:c.checked});const u=U.find(x=>x.id==c.dataset.t);u[c.dataset.f]=c.checked;M.textContent='Kaydedildi.';yetki()}catch(e){M.textContent='Hata: '+(e.message||e)}})}
+ // yeni kişi
+ const xG=document.getElementById('xG');xG.innerHTML=window.__D.gruplar.map((g,i)=>`<label style="font-size:13px;border:1px solid #ddd;border-radius:8px;padding:5px 8px;display:flex;gap:4px;align-items:center"><input type="checkbox" value="${i+1}">${i+1}. Grup</label>`).join('')+'<label style="font-size:13px;border:1px solid #ddd;border-radius:8px;padding:5px 8px;display:flex;gap:4px;align-items:center"><input type="checkbox" value="s3">3. Şufa</label>';
+ document.getElementById('xR').onchange=e=>{xG.style.display=e.target.value=='grup'?'flex':'none'};
+ document.getElementById('xK').onclick=async()=>{const M=document.getElementById('xM');const ad=document.getElementById('xA').value.trim().toLocaleUpperCase('tr-TR'),t=telNorm(document.getElementById('xT').value),r=document.getElementById('xR').value;
+  const sec=[...xG.querySelectorAll('input:checked')].map(c=>c.value);const gr=sec.filter(v=>v!='s3').map(Number),s3=sec.includes('s3');
+  if(!ad||!t){M.textContent='Ad ve geçerli bir numara yazın.';return}if(r=='grup'&&!sec.length){M.textContent='En az bir grup seçin.';return}
+  if(U.find(u=>u.id==t)){M.textContent='Bu numara zaten kayıtlı; yetkisini aşağıdaki listeden değiştirin.';return}
+  try{await setDoc(doc(db,'uyeler',t),{kisiler:[],adlar:[ad],gruplar:r=='grup'?gr:[],s3:r=='grup'?s3:false,hepsi:r!='grup',admin:r=='yon',ekstra:true});U=await hepsi('uyeler');M.textContent='Eklendi.';document.getElementById('xA').value='';document.getElementById('xT').value='';xG.querySelectorAll('input').forEach(c=>c.checked=false);yetki();ciz(document.getElementById('tA').value)}catch(e){M.textContent='Hata: '+(e.message||e)}};
+ // yetkiler
+ function yetki(){const ben=auth.currentUser.phoneNumber;document.getElementById('yL').innerHTML=U.slice().sort((a,b)=>((a.adlar||[''])[0]||'').localeCompare((b.adlar||[''])[0]||'','tr')).map(u=>`<div class="er" style="display:flex;gap:8px;align-items:center;padding:8px 10px"><div style="flex:1;min-width:0"><b style="font-size:14px">${(u.adlar||[]).join(', ')||'—'}</b><div style="font-size:12px;color:#777">${goster(u.id)} · ${[...(u.gruplar||[]).map(g=>g+'. Grup'),...(u.s3?['3. Şufa']:[])].join(', ')||'—'}${u.ekstra?' · ek kişi':''}</div></div><select data-t="${u.id}" ${u.id==ben?'disabled':''} style="padding:6px;border:1px solid #cfd8d5;border-radius:8px;font-size:13px"><option value="grup" ${ROL(u)=='grup'?'selected':''}>Kendi grubu</option><option value="tum" ${ROL(u)=='tum'?'selected':''}>Tüm gruplar</option><option value="yon" ${ROL(u)=='yon'?'selected':''}>Yönetici</option></select>${u.ekstra?`<button data-s="${u.id}" style="border:1px solid #e0b4b4;background:#fff;color:#b42318;border-radius:8px;padding:5px 8px;font-size:12px">Sil</button>`:''}</div>`).join('')||'<div class="hint">Henüz kayıtlı telefon yok.</div>';
+  document.querySelectorAll('#yL button[data-s]').forEach(b=>b.onclick=async()=>{const M=document.getElementById('yM');try{await deleteDoc(doc(db,'uyeler',b.dataset.s));U=U.filter(x=>x.id!=b.dataset.s);M.textContent='Silindi.';yetki();ciz(document.getElementById('tA').value)}catch(e){M.textContent='Hata: '+(e.message||e)}});
+  document.querySelectorAll('#yL select').forEach(c=>c.onchange=async()=>{const M=document.getElementById('yM');const v=c.value,ch={admin:v=='yon',hepsi:v!='grup'};M.textContent='Kaydediliyor…';
+   try{await updateDoc(doc(db,'uyeler',c.dataset.t),ch);Object.assign(U.find(x=>x.id==c.dataset.t),ch);M.textContent='Kaydedildi.'}catch(e){M.textContent='Hata: '+(e.message||e)}})}
  // duyuru
  document.getElementById('nK').onclick=async()=>{const M=document.getElementById('nM');const r={dava:nD.value,tarih:nT.value.trim(),baslik:nB.value.trim(),metin:nX.value.trim(),gorseller:[]};
   if(!/^\d{2}\.\d{2}\.\d{4}$/.test(r.tarih)||!r.baslik){M.textContent='Tarih (gg.aa.yyyy) ve başlık gerekli.';return}
