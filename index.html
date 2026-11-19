@@ -579,7 +579,7 @@ function sonra(){
  ['eC','eR'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});
  const A=document.querySelector('#ad .w');
  const box=document.createElement('div');box.innerHTML=`
- <h2>Telefon numaraları</h2><div class="sub" style="margin:0 0 8px">Her kişinin SMS ile gireceği numarayı yazın (05xx…). Aynı numarayı birden fazla kişiye yazarsanız o telefon bu kişilerin hepsini görür.</div>
+ <h2>Telefon numaraları</h2><div class="sub" style="margin:0 0 8px">Her kişinin SMS ile gireceği numarayı yazın (05xx…). Bir kişiye birden fazla numara için aralarına virgül koyun. Aynı numarayı birden fazla kişiye yazarsanız o telefon bu kişilerin hepsini görür.</div>
  <input type="search" id="tA" placeholder="İsim ara" style="padding:10px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:10px;margin-bottom:8px">
  <div id="tL"></div><div class="ab"><button id="tK">Numaraları kaydet</button></div><div id="tM" class="hint"></div>
  <h2>Yeni duyuru</h2><div class="af">
@@ -604,14 +604,14 @@ function sonra(){
  (window.__O.sufa3k||[]).forEach((k,i)=>ek(k,window.__O.sufa3[i],0,true));
  const L=Object.values(K).sort((a,b)=>a.ad.localeCompare(b.ad,'tr'));
  let U=[];const tel={};
- hepsi('uyeler').then(us=>{U=us;us.forEach(u=>(u.kisiler||[]).forEach(k=>tel[k]=u.id));ciz('')});
  const goster=t=>t?('0'+t.slice(3)).replace(/(\d{4})(\d{3})(\d{2})(\d{2})/,'$1 $2 $3 $4'):'';
- function ciz(f){f=f.toLocaleLowerCase('tr-TR');document.getElementById('tL').innerHTML=L.filter(p=>!f||p.ad.toLocaleLowerCase('tr-TR').includes(f)).map(p=>`<div class="er" style="display:flex;gap:8px;align-items:center;padding:8px 10px"><div style="flex:1;min-width:0"><b style="font-size:14px">${p.ad}</b><div style="font-size:12px;color:#777">${p.gruplar.map(g=>g+'. Grup').join(', ')}${p.s3?(p.gruplar.length?' · ':'')+'3. Şufa':''}</div></div><input data-k="${p.kisi}" class="tI" inputmode="tel" placeholder="05xx xxx xx xx" value="${goster(tel[p.kisi]||'')}" style="width:150px;padding:9px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:8px"></div>`).join('');
+ hepsi('uyeler').then(us=>{U=us;us.forEach(u=>(u.kisiler||[]).forEach(k=>tel[k]=(tel[k]?tel[k]+', ':'')+goster(u.id)));ciz('')});
+ function ciz(f){f=f.toLocaleLowerCase('tr-TR');document.getElementById('tL').innerHTML=L.filter(p=>!f||p.ad.toLocaleLowerCase('tr-TR').includes(f)).map(p=>`<div class="er" style="display:flex;gap:8px;align-items:center;padding:8px 10px"><div style="flex:1;min-width:0"><b style="font-size:14px">${p.ad}</b><div style="font-size:12px;color:#777">${p.gruplar.map(g=>g+'. Grup').join(', ')}${p.s3?(p.gruplar.length?' · ':'')+'3. Şufa':''}</div></div><input data-k="${p.kisi}" class="tI" inputmode="tel" placeholder="05xx…, 05xx…" value="${tel[p.kisi]||''}" style="width:190px;padding:9px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:8px"></div>`).join('');
   document.querySelectorAll('.tI').forEach(i=>i.oninput=e=>{tel[i.dataset.k]=e.target.value})}
  document.getElementById('tA').oninput=e=>ciz(e.target.value);
  document.getElementById('tK').onclick=async()=>{const M=document.getElementById('tM');const yeni={};const hata=[];
-  L.forEach(p=>{const v=tel[p.kisi];if(!v)return;const t=v.startsWith('+')&&v.length==13?v:telNorm(v);if(!t){hata.push(p.ad);return}
-   yeni[t]=yeni[t]||{kisiler:[],adlar:[],gruplar:[],s3:false};const y=yeni[t];y.kisiler.push(p.kisi);y.adlar.push(p.ad);p.gruplar.forEach(g=>{if(!y.gruplar.includes(g))y.gruplar.push(g)});if(p.s3)y.s3=true});
+  L.forEach(p=>{const v=tel[p.kisi];if(!v||!v.trim())return;v.split(/[,;\/]+/).map(x=>x.trim()).filter(Boolean).forEach(x=>{const t=telNorm(x);if(!t){hata.push(p.ad);return}
+   yeni[t]=yeni[t]||{kisiler:[],adlar:[],gruplar:[],s3:false};const y=yeni[t];if(y.kisiler.includes(p.kisi))return;y.kisiler.push(p.kisi);y.adlar.push(p.ad);p.gruplar.forEach(g=>{if(!y.gruplar.includes(g))y.gruplar.push(g)});if(p.s3)y.s3=true})});
   if(hata.length){M.textContent='Hatalı numara: '+hata.join(', ');return}
   M.textContent='Kaydediliyor…';
   try{const eski={};U.forEach(u=>eski[u.id]=u);
