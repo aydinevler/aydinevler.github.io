@@ -633,14 +633,20 @@ function sonra(){
  let GR={};const girTxt=t=>{const g=GR[t];if(!g||!g.son)return '<span style="color:#b45309">Henüz girmedi</span>';const d=g.son.toDate?g.son.toDate():new Date(g.son);return 'Son giriş: '+d.toLocaleDateString('tr-TR')+' '+d.toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'})+' · '+(g.sayi||1)+' kez'};
  hepsi('girisler').then(gs=>{gs.forEach(g=>GR[g.id]=g);if(U.length)yetki()}).catch(()=>{});
  hepsi('uyeler').then(us=>{U=us;us.forEach(u=>(u.kisiler||[]).forEach(k=>tel[k]=(tel[k]?tel[k]+', ':'')+goster(u.id)));ciz('');yetki()});
- const satir=(p,c)=>`<div class="er" style="display:flex;gap:8px;align-items:center;padding:7px 10px;border-left:4px solid ${c}"><div style="flex:1;min-width:0"><b style="font-size:14px">${p.ad}</b><div style="font-size:11.5px;color:#888">${p.gruplar.length+(p.s3?1:0)>1?'Hepsi: '+[...p.gruplar.map(g=>g+'. Grup'),...(p.s3?['3. Şufa']:[])].join(', '):''}</div></div><input data-k="${p.kisi}" class="tI" inputmode="tel" placeholder="05xx…" value="${tel[p.kisi]||''}" style="width:180px;padding:8px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:8px"></div>`;
+ async function adDegis(k){const p=K[k];const es=p.ad;const y=(prompt('Yeni ad (soyadı kısaltılmış yazın, ör. AHMET YLMZ):',es)||'').trim();if(!y||y===es)return;const M=document.getElementById('tM');M.textContent='Ad değiştiriliyor…';
+  try{const O=window.__O;
+   for(const [i,g] of window.__D.gruplar.entries()){if(!g.uyeler.some(u=>u.kisi===k))continue;g.uyeler.forEach(u=>{if(u.kisi===k)u.ad=y});const ad=g.ad.split(es).join(y);g.ad=ad;await updateDoc(doc(db,'gruplar',String(i+1)),{uyeler:g.uyeler,ad});if(O.gruplar[i])O.gruplar[i].ad=ad}
+   (O.sufa3k||[]).forEach((x,i)=>{if(x===k)O.sufa3[i]=y});await updateDoc(doc(db,'ozet','genel'),{sufa3:O.sufa3,gruplar:O.gruplar});
+   for(const u of U){const i=(u.kisiler||[]).indexOf(k);if(i<0)continue;const a=[...(u.adlar||[])];a[i]=y;await updateDoc(doc(db,'uyeler',u.id),{adlar:a});u.adlar=a}
+   M.textContent='Değiştirildi: '+es+' → '+y+'. Sayfa yenileniyor…';setTimeout(()=>location.reload(),1500)}catch(e){M.textContent='Hata: '+(e.message||e)}}
+ const satir=(p,c)=>`<div class="er" style="display:flex;gap:8px;align-items:center;padding:7px 10px;border-left:4px solid ${c}"><div style="flex:1;min-width:0"><b style="font-size:14px">${p.ad}</b><button class="aD" data-k="${p.kisi}" title="Adı değiştir" style="margin-left:6px;padding:2px 7px;font-size:13px;border:1px solid #cfd8d5;border-radius:6px;background:#fff;cursor:pointer">✏️</button><div style="font-size:11.5px;color:#888">${p.gruplar.length+(p.s3?1:0)>1?'Hepsi: '+[...p.gruplar.map(g=>g+'. Grup'),...(p.s3?['3. Şufa']:[])].join(', '):''}</div></div><input data-k="${p.kisi}" class="tI" inputmode="tel" placeholder="05xx…" value="${tel[p.kisi]||''}" style="width:180px;padding:8px;font-size:15px;border:1.5px solid #cfd8d5;border-radius:8px"></div>`;
  function ciz(f){f=f.toLocaleLowerCase('tr-TR');const ok=p=>!f||p.ad.toLocaleLowerCase('tr-TR').includes(f);let h='';
   window.__D.gruplar.forEach((g,i)=>{const n=i+1,ps=L.filter(p=>p.gruplar.includes(n)&&ok(p)).sort((a,b)=>a.ad.localeCompare(b.ad,'tr'));if(!ps.length)return;
    const x=U.filter(u=>u.ekstra&&!u.hepsi&&!u.admin&&(u.gruplar||[]).includes(n));
    h+=`<div style="margin:14px 0 6px;font-weight:700;color:${RN[i]}">${g.ad}</div>`+ps.map(p=>satir(p,RN[i])).join('')+x.map(u=>`<div class="er" style="padding:7px 10px;border-left:4px dashed ${RN[i]};font-size:13px;color:#555">➕ ${(u.adlar||[]).join(', ')} · ${goster(u.id)} <span style="color:#999">(ek kişi)</span></div>`).join('')});
   const s3=L.filter(p=>p.s3&&ok(p)).sort((a,b)=>a.ad.localeCompare(b.ad,'tr'));
   if(s3.length)h+=`<div style="margin:14px 0 6px;font-weight:700;color:#2e8b57">3. Şufa – 30 kişi</div>`+s3.map(p=>satir(p,'#2e8b57')).join('');
-  document.getElementById('tL').innerHTML=h||'<div class="hint">Bulunamadı.</div>';
+  document.getElementById('tL').innerHTML=h||'<div class="hint">Bulunamadı.</div>';document.querySelectorAll('.aD').forEach(x=>x.onclick=()=>adDegis(x.dataset.k));
   document.querySelectorAll('.tI').forEach(i=>{i.oninput=e=>{tel[i.dataset.k]=e.target.value};i.onchange=()=>document.querySelectorAll(`.tI[data-k="${i.dataset.k}"]`).forEach(o=>{if(o!==i)o.value=i.value})})}
  document.getElementById('tA').oninput=e=>ciz(e.target.value);
  document.getElementById('tK').onclick=async()=>{const M=document.getElementById('tM');const yeni={};const hata=[];
